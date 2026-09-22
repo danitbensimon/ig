@@ -4,6 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9G287R7LSE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9G287R7LSE');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a'); if(!a) return;
+    var nameEl = a.querySelector('.t-name'); 
+    var label = nameEl ? nameEl.textContent.trim() : (a.textContent || '').trim().slice(0,60);
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('pay.sumit.co.il') > -1){
+      gtag('event','begin_checkout',{item_name:label, link_url:href});
+    } else {
+      gtag('event','link_click',{link_text:label, link_url:href});
+    }
+  }, true);
+</script>
 <title>המדריך לפריטין</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
