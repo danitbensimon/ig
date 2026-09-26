@@ -87,9 +87,9 @@ section{padding-block:64px}
 .eyebrow i{font-style:normal; color:var(--line-2)}
 .eyebrow::before{content:""; width:34px; height:1px; background:var(--gold)}
 .hero h1{font-weight:800; letter-spacing:-.01em; font-size:clamp(44px,12.5vw,96px); line-height:1.05; white-space:nowrap}
-.gf-shine{display:inline-block; font-weight:800; background:linear-gradient(100deg,#feda75 0%,#fa7e1e 18%,#d62976 36%,#962fbf 54%,#4f5bd5 70%,#fff 78%,#d62976 86%,#fa7e1e 100%); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gfShine 3.2s linear infinite; filter:drop-shadow(0 0 8px rgba(214,41,118,.3)); padding-inline:.04em}
-.gf-shine::after{content:" ✦"; color:#d62976; -webkit-text-fill-color:#d62976; font-size:.45em; vertical-align:.9em; display:inline-block; animation:gfTwinkle 1.6s ease-in-out infinite}
-@keyframes gfShine{from{background-position:100% 0}to{background-position:-150% 0}}
+.gf-shine{display:inline-block; font-family:'Rubik',sans-serif; font-weight:700; background:linear-gradient(100deg,#F4A7C3 0%,#E0679A 25%,#F9D0DF 45%,#D9538D 65%,#F4A7C3 100%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gfShine 7s ease-in-out infinite alternate; padding-inline:.04em}
+.gf-shine::after{content:" ✦"; color:#E0679A; -webkit-text-fill-color:#E0679A; font-size:.45em; vertical-align:.9em; display:inline-block; animation:gfTwinkle 1.6s ease-in-out infinite}
+@keyframes gfShine{from{background-position:0% 0}to{background-position:100% 0}}}
 @keyframes gfTwinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
 .hero h1 em{font-style:normal; font-weight:700; background:var(--ig); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero .subhead{font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.35; color:var(--ink); margin:16px auto 0; max-width:30ch; text-wrap:balance}
@@ -111,7 +111,7 @@ section{padding-block:64px}
 .micro b{color:var(--ink); font-weight:600}
 
 /* cover */
-.cover-wrap{position:relative; display:grid; place-items:center; padding:14px 0 8px; order:-1}
+.cover-wrap{position:relative; display:grid; place-items:center; padding:14px 0 80px; order:-1}
 .cover{position:relative; width:min(84vw, 382px); aspect-ratio:2/3; border-radius:2px 6px 6px 2px;
   box-shadow:var(--shadow-lg); transform:rotate(-2deg); animation:float 7s ease-in-out infinite}
 .cover img{width:100%; height:100%; object-fit:cover; border-radius:inherit}
@@ -123,14 +123,14 @@ section{padding-block:64px}
   background:var(--blush-2); transform:rotate(4deg) translate(-14px,8px); opacity:.7}
 .sticker{
   position:absolute; z-index:3; top:30%; left:-18px; animation:bob 4s ease-in-out infinite;
-  width:112px; height:112px; border-radius:50%; background:var(--paper); color:var(--wine);
+  width:94px; height:94px; border-radius:50%; background:var(--paper); color:var(--wine);
   display:grid; place-items:center; text-align:center; transform:rotate(-8deg);
-  font-family:var(--serif); font-weight:800; line-height:1; font-size:22px;
+  font-family:var(--serif); font-weight:800; line-height:1; font-size:18px;
   box-shadow:var(--shadow); border:1px solid var(--line-2); outline:1px solid var(--line-2); outline-offset:-6px;
 }
 .sticker small{display:block; font-family:var(--sans); font-size:16px; font-weight:700; margin-bottom:3px; letter-spacing:.08em; color:var(--ink-2); margin-top:4px}
 .sample-tag{
-  position:absolute; z-index:3; bottom:-24px; right:-10px; white-space:nowrap; animation:bob 4s ease-in-out -2s infinite;
+  position:absolute; z-index:3; bottom:-74px; right:-4px; white-space:nowrap; animation:bob 4s ease-in-out -2s infinite;
   background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:14px 22px;
   box-shadow:var(--shadow); transform:rotate(3deg); font-weight:800; font-size:23px; letter-spacing:.04em; color:var(--ink);
 }
@@ -260,17 +260,18 @@ footer a{color:var(--wine); font-weight:400}
 
 @media (min-width:760px){
   .hero{padding-block:70px 30px}
-  .hero-grid{grid-template-columns:1fr 1fr; gap:60px}
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:60px}
+  .hero h1{font-size:clamp(56px,6vw,88px)}
   .hero-copy{text-align:right}
   .hero .lead{margin-inline:0; font-size:21px; max-width:none}
   .hero .subhead{max-width:none}
   .hero .subhead{margin-inline:0; font-size:27px}
   .badges{align-items:flex-start}
-  .cover-wrap{order:0; padding:10px 0 20px}
-  .cover,.cover-back{width:min(40vw, 560px)}
-  .sticker{width:140px; height:140px; font-size:28px; left:-70px; top:28%}
+  .cover-wrap{order:0; padding:10px 0 70px}
+  .cover,.cover-back{width:min(33vw, 450px)}
+  .sticker{width:118px; height:118px; font-size:23px; left:-44px; top:28%}
   .sticker small{font-size:18px}
-  .sample-tag{font-size:30px; padding:18px 30px; right:-40px; bottom:-34px}
+  .sample-tag{font-size:30px; padding:18px 30px; right:-40px; bottom:-60px}
   .toc{grid-template-columns:1fr 1fr; column-gap:48px}
   .page.gift,.page.honest{grid-column:1/-1}
   .steps{grid-template-columns:repeat(3,1fr); gap:36px}
