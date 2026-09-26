@@ -18,7 +18,7 @@
   color-scheme:light;
   --wine:#7A1A2B; --wine-d:#5A1220;
   --ground:#FBF7F4; --paper:#FFFFFF; --blush:#F4E4E4; --blush-2:#EBCFD2;
-  --ink:#231B1C; --ink-2:#6A5A5C; --line:#E9DCD9; --line-2:#D9C3C0;
+  --ink:#1A1415; --ink-2:#2A2021; --line:#E9DCD9; --line-2:#D9C3C0;
   --gold:#A8814F; --sage:#5B7152;
   --serif:'Frank Ruhl Libre', 'David Libre', Georgia, serif;
   --sans:'Assistant', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -56,7 +56,7 @@ section{padding-block:64px}
 .eyebrow::before{content:""; width:34px; height:1px; background:var(--gold)}
 .hero h1{font-weight:300; font-size:clamp(36px,9.4vw,64px); line-height:1.12; text-wrap:balance}
 .hero h1 em{font-style:normal; color:var(--wine); font-weight:300}
-.hero .lead{font-size:19.5px; font-weight:300; color:var(--ink-2); margin:18px auto 0; max-width:34ch; text-wrap:balance}
+.hero .lead{font-size:19.5px; font-weight:400; color:var(--ink-2); margin:18px auto 0; max-width:34ch; text-wrap:balance}
 .hero .lead b{color:var(--ink); font-weight:600}
 
 .cta{
@@ -69,7 +69,7 @@ section{padding-block:64px}
 .cta:hover{background:var(--wine-d); transform:translateY(-1px)}
 .cta:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
 .cta .arr{display:inline-block; font-size:15px}
-.micro{font-size:15px; color:var(--ink-2); margin-top:12px; font-weight:300}
+.micro{font-size:15px; color:var(--ink-2); margin-top:12px; font-weight:400}
 .micro b{color:var(--ink); font-weight:600}
 
 /* cover */
@@ -106,7 +106,7 @@ section{padding-block:64px}
 
 .kicker{font-size:13.5px; font-weight:600; color:var(--gold); letter-spacing:.18em; margin:0 0 12px; text-align:center}
 .h2{font-weight:300; font-size:clamp(30px,7vw,44px); line-height:1.2; text-align:center; text-wrap:balance}
-.sub{text-align:center; color:var(--ink-2); font-weight:300; font-size:19px; margin:14px auto 0; max-width:40ch; text-wrap:balance}
+.sub{text-align:center; color:var(--ink-2); font-weight:400; font-size:19px; margin:14px auto 0; max-width:40ch; text-wrap:balance}
 
 /* contents */
 .toc{display:grid; grid-template-columns:1fr; gap:0; margin-top:38px; border-top:1px solid var(--line)}
@@ -114,7 +114,7 @@ section{padding-block:64px}
   padding:24px 4px; border-bottom:1px solid var(--line)}
 .page .num{font-family:var(--serif); font-size:34px; line-height:1; color:var(--wine); font-weight:400; min-width:48px; padding-top:2px}
 .page h3{font-size:24px; line-height:1.3; margin-bottom:6px}
-.page p{margin:0; color:var(--ink-2); font-size:17.5px; font-weight:300}
+.page p{margin:0; color:var(--ink-2); font-size:17.5px; font-weight:400}
 .page.gift{background:var(--blush); border:0; padding:26px 22px; margin-top:22px; border-radius:2px}
 .page.gift .num{color:var(--sage)}
 .page .tag{display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.14em; color:var(--sage); margin-bottom:4px}
@@ -127,7 +127,7 @@ section{padding-block:64px}
   width:46px; height:46px; border-radius:50%; border:1px solid var(--wine); color:var(--wine);
   font-family:var(--serif); font-size:22px; display:grid; place-items:center; line-height:1}
 .steps b{display:block; font-family:var(--serif); font-size:21px; font-weight:500}
-.steps span{color:var(--ink-2); font-size:17px; font-weight:300}
+.steps span{color:var(--ink-2); font-size:17px; font-weight:400}
 
 /* form */
 .signup{padding-block:28px 72px}
@@ -138,15 +138,15 @@ section{padding-block:64px}
 .form-head{display:flex; gap:18px; align-items:center; margin-bottom:26px; position:relative}
 .form-head img{width:64px; aspect-ratio:2/3; object-fit:cover; border-radius:1px 4px 4px 1px; box-shadow:var(--shadow); flex:none}
 .form-head h2{font-size:clamp(26px,6vw,32px); line-height:1.2}
-.form-head p{margin:4px 0 0; color:var(--ink-2); font-size:16.5px; font-weight:300; line-height:1.55}
+.form-head p{margin:4px 0 0; color:var(--ink-2); font-size:16.5px; font-weight:400; line-height:1.55}
 form{position:relative}
 .field{margin-bottom:16px}
 .row{display:grid; grid-template-columns:1fr; gap:0 14px}
 label{display:block; font-weight:600; font-size:15px; letter-spacing:.02em; margin-bottom:6px; color:var(--ink)}
-label .opt{font-weight:300; color:var(--ink-2)}
+label .opt{font-weight:400; color:var(--ink-2)}
 input{width:100%; font:inherit; font-size:18px; font-weight:400; color:var(--ink); background:var(--ground);
   border:1px solid var(--line-2); border-radius:2px; padding:13px 15px; transition:border-color .15s, background .15s}
-input::placeholder{color:#B4A4A3; font-weight:300}
+input::placeholder{color:#8A7A7B; font-weight:400}
 input:focus{outline:none; border-color:var(--wine); background:#fff}
 input[type=email], input[inputmode=numeric]{direction:ltr; text-align:right}
 input.bad{border-color:#B03A2E; background:#FFF8F7}
@@ -161,18 +161,18 @@ input.bad{border-color:#B03A2E; background:#FFF8F7}
 .follow .consent{margin:0}
 .follow .consent label{color:var(--ink); font-weight:600}
 .follow .err a,.follow-hint a{color:var(--wine); font-weight:600}
-.follow-hint{margin:6px 0 0; font-size:14.5px; color:var(--ink-2); font-weight:300}
+.follow-hint{margin:6px 0 0; font-size:14.5px; color:var(--ink-2); font-weight:400}
 .follow.invalid .follow-hint{display:none}
-.consent label{font-weight:300; font-size:15.5px; margin:0; color:var(--ink-2); letter-spacing:0}
+.consent label{font-weight:400; font-size:15.5px; margin:0; color:var(--ink-2); letter-spacing:0}
 .submit{width:100%; margin-top:18px}
 .submit[disabled]{opacity:.7; cursor:progress}
-.fine{text-align:center; font-size:14.5px; color:var(--ink-2); margin:14px 0 0; font-weight:300}
+.fine{text-align:center; font-size:14.5px; color:var(--ink-2); margin:14px 0 0; font-weight:400}
 .fine b{color:var(--ink); font-weight:600}
 .hp{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
 .done{display:none; text-align:center; padding:14px 4px; position:relative}
 .done .big{font-family:var(--serif); font-size:15px; letter-spacing:.2em; color:var(--gold)}
 .done h2{font-size:32px; margin:10px 0 10px}
-.done p{color:var(--ink-2); margin:0 auto; max-width:34ch; font-weight:300}
+.done p{color:var(--ink-2); margin:0 auto; max-width:34ch; font-weight:400}
 .done .share{display:inline-flex; margin-top:22px; gap:8px; align-items:center; font-weight:600; font-family:var(--sans);
   color:var(--wine); border:1px solid var(--wine); border-radius:2px; padding:11px 24px; background:#fff; font-size:16px; cursor:pointer}
 .form-card.sent form{display:none}
@@ -183,7 +183,7 @@ input.bad{border-color:#B03A2E; background:#FFF8F7}
   border-block:1px solid var(--line)}
 .about img{width:92px; height:92px; border-radius:50%; object-fit:cover; object-position:50% 16%; border:3px solid #fff; box-shadow:var(--shadow)}
 .about h3{font-size:24px}
-.about p{margin:4px 0 0; color:var(--ink-2); font-size:17px; font-weight:300}
+.about p{margin:4px 0 0; color:var(--ink-2); font-size:17px; font-weight:400}
 .about p b{color:var(--wine); font-weight:600}
 
 .faq{margin-top:28px; border-top:1px solid var(--line)}
@@ -191,11 +191,11 @@ details{border-bottom:1px solid var(--line); padding:0 2px}
 summary{list-style:none; cursor:pointer; padding:20px 0; font-family:var(--serif); font-weight:500; font-size:20px;
   display:flex; justify-content:space-between; gap:12px; align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+"; font-family:var(--sans); font-weight:300; font-size:26px; color:var(--wine); line-height:1; transition:transform .2s; flex:none}
+summary::after{content:"+"; font-family:var(--sans); font-weight:400; font-size:26px; color:var(--wine); line-height:1; transition:transform .2s; flex:none}
 details[open] summary::after{transform:rotate(45deg)}
-details p{margin:0 0 20px; color:var(--ink-2); font-size:17px; font-weight:300}
+details p{margin:0 0 20px; color:var(--ink-2); font-size:17px; font-weight:400}
 
-footer{text-align:center; font-size:14.5px; line-height:1.7; color:var(--ink-2); font-weight:300; padding:36px 20px 110px}
+footer{text-align:center; font-size:14.5px; line-height:1.7; color:var(--ink-2); font-weight:400; padding:36px 20px 110px}
 footer a{color:var(--wine); font-weight:400}
 
 .sticky{position:fixed; inset-inline:0; bottom:0; z-index:20; padding:12px 16px calc(12px + env(safe-area-inset-bottom));
