@@ -60,11 +60,13 @@ p:last-child{margin-bottom:0}
 
 /* cta */
 .cta{display:flex; flex-direction:column; align-items:center; gap:10px; width:100%}
-a.buy{display:block; width:100%; max-width:380px; text-align:center; background:var(--wine); color:#fff;
-  text-decoration:none; font-family:'Heebo',sans-serif; font-weight:800; font-size:23px;
-  padding:20px 28px; border-radius:15px; box-shadow:0 4px 14px rgba(140,29,47,.32);
+a.buy{display:block; width:100%; max-width:380px; text-align:center; background:linear-gradient(90deg,#F48FB6,#EC5F97,#F7A6C6,#EC5F97,#F48FB6); background-size:300% 100%; animation:buyFlow 5s linear infinite; color:#fff; text-shadow:0 1px 2px rgba(150,20,70,.35);
+  text-decoration:none; font-family:'Heebo',sans-serif; font-weight:800; font-size:21px; white-space:nowrap;
+  padding:19px 18px; border-radius:999px; box-shadow:0 8px 22px rgba(236,95,151,.35);
   transition:transform .15s ease}
 a.buy:hover{transform:translateY(-2px)}
+@keyframes buyFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
+@media (prefers-reduced-motion:reduce){a.buy{animation:none}}
 a.buy:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
 .fine{font-size:16px; color:var(--ink-2); margin:0; text-align:center}
 
@@ -152,19 +154,19 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
   <section class="plain">
     <h2>ראשי הפרקים</h2>
     <ol class="toc">
-      <li><b>המספר שאף אחד לא סימן לך באדום</b>: מה זה פריטין, ולמה ״תקין״ לא אומר מספיק.</li>
-      <li><b>מה קורה לגוף כשמתעלמים מזה שנים</b>: שיער, לב, בלוטת התריס, ריכוז ושינה.</li>
-      <li><b>מה לבקש בבדיקה הבאה</b>: הרשימה המדויקת, ומה לשאול כשאומרים לך שהכל בסדר.</li>
-      <li><b>למה את אוכלת ברזל והוא לא נספג</b>: ההורמון שמונע את הספיגה, ומה מבטל אותו.</li>
-      <li><b>לאן מכוונים וכמה זמן זה לוקח</b>: המספרים שמחפשים, ולוח זמנים אמיתי.</li>
-      <li><b>למי התפריט מתאים</b>: ואיפה צריך התאמה מקצועית.</li>
-      <li><b>התפריט השבועי</b>: שבעה ימים, חמש ארוחות ביום, עם כמויות וערכים תזונתיים.</li>
-      <li><b>מה לא נכנס לצלחת</b>: מה להוריד, ומה רק לתזמן אחרת.</li>
-      <li><b>תשעת חוקי הספיגה</b>: מה מכפיל אותה ומה מבטל אותה בלי ששמת לב.</li>
-      <li><b>המעיים: איפה הספיגה באמת נגמרת</b>: הליקובקטר, חומציות קיבה ומה שאחרי אנטיביוטיקה.</li>
-      <li><b>מותססים</b>: החלק שהכי משנה ושהכי מפספסים, ואיך להתחיל בבית.</li>
-      <li><b>משבשי הורמונים</b>: מה זה באמת, ולמה זה נוגע ישירות לפריטין שלך.</li>
-      <li><b>עשר החלפות שלוקחות שבוע</b>: בלי להפוך את הבית.</li>
+      <li><b>למה ״תקין״ לא אומר מספיק</b><br>מה זה פריטין, ולמה המספר שלך יכול להיות ״תקין״ ועדיין נמוך מדי.</li>
+      <li><b>מה קורה לגוף כשהפריטין נמוך שנים</b><br>איך זה משפיע על השיער, הלב, בלוטת התריס, הריכוז והשינה.</li>
+      <li><b>מה לבקש בבדיקה הבאה</b><br>הרשימה המדויקת, ומה לשאול כשאומרים לך שהכל בסדר.</li>
+      <li><b>למה את אוכלת ברזל והוא לא נספג</b><br>ההורמון שמונע את הספיגה, ומה מבטל אותו.</li>
+      <li><b>לאיזה מספר לכוון וכמה זמן זה לוקח</b><br>המספרים שכדאי להגיע אליהם, ולוח זמנים אמיתי.</li>
+      <li><b>למי התפריט מתאים</b><br>ומתי כדאי להתייעץ עם איש מקצוע לפני שמתחילים.</li>
+      <li><b>התפריט השבועי</b><br>7 ימים, 5 ארוחות ביום, עם כמויות וערכים תזונתיים.</li>
+      <li><b>מה להוריד מהצלחת</b><br>מה להפסיק לאכול, ומה רק לאכול בשעה אחרת.</li>
+      <li><b>9 חוקי ספיגה</b><br>מה עוזר לברזל להיספג, ומה מפריע לו בלי ששמת לב.</li>
+      <li><b>המעיים</b><br>איך הליקובקטר, חומציות בקיבה ואנטיביוטיקה משפיעים על ספיגת הברזל.</li>
+      <li><b>מותססים</b><br>למה הם כל כך חשובים לספיגה, ואיך להתחיל להכין אותם בבית.</li>
+      <li><b>משבשי הורמונים</b><br>מה זה, ואיך זה קשור לפריטין שלך.</li>
+      <li><b>10 החלפות קטנות בבית</b><br>10 אלטרנטיבות פשוטות למוצרים שיש לך בבית, שאפשר לעשות תוך שבוע.</li>
     </ol>
     <p class="bonus">ובונוס: <b>שישה מוצרים שמאיצים את התהליך</b>.</p>
   </section>
