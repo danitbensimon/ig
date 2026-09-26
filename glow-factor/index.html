@@ -100,18 +100,19 @@ section{padding-block:64px}
 .cover-back{position:absolute; width:min(60vw, 255px); aspect-ratio:2/3; border-radius:2px 6px 6px 2px;
   background:var(--blush-2); transform:rotate(4deg) translate(-14px,8px); opacity:.7}
 .sticker{
-  position:absolute; z-index:3; top:38%; left:max(1%, calc(50% - 185px));
-  width:118px; height:118px; border-radius:50%; background:var(--paper); color:var(--wine);
+  position:absolute; z-index:3; top:30%; left:-58px; animation:bob 4s ease-in-out infinite;
+  width:100px; height:100px; border-radius:50%; background:var(--paper); color:var(--wine);
   display:grid; place-items:center; text-align:center; transform:rotate(-8deg);
-  font-family:var(--serif); font-weight:700; line-height:1.05; font-size:30px;
+  font-family:var(--serif); font-weight:700; line-height:1.05; font-size:24px;
   box-shadow:var(--shadow); border:1px solid var(--line-2); outline:1px solid var(--line-2); outline-offset:-6px;
 }
-.sticker small{display:block; font-family:var(--sans); font-size:16px; font-weight:600; letter-spacing:.08em; color:var(--ink-2); margin-top:4px}
+.sticker small{display:block; font-family:var(--sans); font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--ink-2); margin-top:4px}
 .sample-tag{
-  position:absolute; z-index:3; bottom:-1%; right:max(1%, calc(50% - 175px));
-  background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:12px 20px;
-  box-shadow:var(--shadow); transform:rotate(3deg); font-weight:700; font-size:20px; letter-spacing:.04em; color:var(--ink);
+  position:absolute; z-index:3; bottom:-24px; right:-44px; white-space:nowrap; animation:bob 4s ease-in-out -2s infinite;
+  background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:9px 16px;
+  box-shadow:var(--shadow); transform:rotate(3deg); font-weight:700; font-size:17px; letter-spacing:.04em; color:var(--ink);
 }
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -7px}}
 @keyframes igflow{from{background-position:0% 50%}to{background-position:100% 50%}}
 @keyframes float{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
 
@@ -237,10 +238,9 @@ footer a{color:var(--wine); font-weight:400}
   .badges{align-items:flex-start}
   .cover-wrap{order:0; padding:10px 0 20px}
   .cover,.cover-back{width:min(38vw, 390px)}
-  .sticker{width:150px; height:150px; font-size:38px; left:0; top:36%}
-  .sticker small{font-size:19px}
-  .sample-tag{font-size:24px; padding:14px 24px}
-  .sample-tag{right:4%; bottom:0}
+  .sticker{width:132px; height:132px; font-size:30px; left:-92px; top:28%}
+  .sticker small{font-size:16px}
+  .sample-tag{font-size:21px; padding:12px 22px; right:-70px; bottom:-28px}
   .toc{grid-template-columns:1fr 1fr; column-gap:48px}
   .page.gift,.page.honest{grid-column:1/-1}
   .steps{grid-template-columns:repeat(3,1fr); gap:36px}
@@ -254,6 +254,7 @@ footer a{color:var(--wine); font-weight:400}
   html{scroll-behavior:auto}
   .cover{animation:none}
   .cta{animation:none}
+  .sticker,.sample-tag{animation:none}
   .rv{opacity:1; transform:none; transition:none}
   .cta,.cta:hover{transition:none; transform:none}
 }
@@ -282,9 +283,9 @@ footer a{color:var(--wine); font-weight:400}
       <div class="cover-back" aria-hidden="true"></div>
       <div class="cover">
         <img src="cover-v2.webp" alt="שער המגזין עם דנית בן סימון" width="900" height="1351" fetchpriority="high">
+        <div class="sticker"><div>כולל<small>דיס-המלצות</small></div></div>
+        <div class="sample-tag">עם דוגמיות בפנים</div>
       </div>
-      <div class="sticker" aria-hidden="true"><div>חינם<small>לעוקבות</small></div></div>
-      <div class="sample-tag">עם דוגמיות בפנים</div>
     </div>
   </div>
 </header>
