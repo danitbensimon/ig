@@ -48,6 +48,13 @@ section{padding-block:64px}
   background:radial-gradient(800px 480px at 80% 0%, #F6E7E6 0%, transparent 65%), var(--ground)}
 .hero-grid{display:grid; grid-template-columns:1fr; gap:34px; align-items:center}
 .hero-copy{text-align:center}
+.badges{display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:18px}
+.wl{font-size:14px; font-weight:700; letter-spacing:.12em; color:var(--gold)}
+.igbadge{display:inline-flex; align-items:center; gap:9px; background:#fff; border:1px solid var(--line-2); border-radius:999px;
+  padding:7px 16px 7px 10px; text-decoration:none; color:var(--ink); font-weight:700; font-size:16.5px; box-shadow:var(--shadow)}
+.igi{width:26px; height:26px; flex:none; display:block}
+.iglabel{display:flex; align-items:center; gap:8px}
+.iglabel .igi{width:20px; height:20px}
 .eyebrow{
   display:none; gap:10px; align-items:center; font-size:14px; font-weight:600; color:var(--gold);
   letter-spacing:.14em; margin-bottom:22px;
@@ -212,7 +219,7 @@ footer a{color:var(--wine); font-weight:400}
   .hero-grid{grid-template-columns:1.1fr .9fr; gap:50px}
   .hero-copy{text-align:right}
   .hero .lead{margin-inline:0}
-  .eyebrow{display:inline-flex}
+  .badges{align-items:flex-start}
   .cover-wrap{order:0; padding:10px 0 20px}
   .cover,.cover-back{width:min(36vw, 340px)}
   .sticker{width:108px; height:108px; font-size:26px; left:2%; top:38%}
@@ -236,16 +243,19 @@ footer a{color:var(--wine); font-weight:400}
 </head>
 <body>
 
-<div class="ribbon">מהדורה ראשונה · לעוקבות בלבד</div>
+<div class="ribbon">רשימת המתנה לגיליון מספר 1</div>
 
 <header class="hero">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow">מגזין מודפס <i>·</i> חינם לעוקבות</div>
+      <div class="badges">
+        <span class="wl">רשימת המתנה · גיליון 1</span>
+        <a class="igbadge" href="https://instagram.com/danitbensimon" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#igg)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>חינם לעוקבות בלבד</span></a>
+      </div>
       <h1>עור קורן ואנרגיה גבוהה מתחילים <em>מבפנים</em></h1>
       <p class="lead">מגזין מודפס על תזונה, אימונים ועור. לעוקבות שלי באינסטגרם הוא נשלח הביתה בחינם, <b>ואת משלמת על המשלוח בלבד.</b></p>
       <a class="cta" href="#signup">שריינו לי עותק בחינם <span class="arr" aria-hidden="true">←</span></a>
-      <p class="micro">ההרשמה לוקחת 30 שניות, <b>ועכשיו לא תשלמי כלום.</b></p>
+      <p class="micro"><b>עכשיו לא תשלמי כלום.</b></p>
     </div>
 
     <div class="cover-wrap">
@@ -366,7 +376,7 @@ footer a{color:var(--wine); font-weight:400}
         <div class="form-head">
           <img src="cover.webp" alt="" aria-hidden="true">
           <div>
-            <h2>שריינו לי עותק</h2>
+            <h2>הצטרפי לרשימת ההמתנה לגיליון 1</h2>
             <p>חינם לעוקבות שלי באינסטגרם. ברגע שהמגזין מוכן, תקבלי מייל עם לינק לתשלום המשלוח.</p>
           </div>
         </div>
@@ -384,7 +394,7 @@ footer a{color:var(--wine); font-weight:400}
         </div>
 
         <div class="field">
-          <label for="ig">היוזר שלך באינסטגרם</label>
+          <label for="ig" class="iglabel"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#igg2)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg>היוזר שלך באינסטגרם</label>
           <div class="ig-wrap"><span aria-hidden="true">@</span><input id="ig" name="ig" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="your.username" required></div>
           <div class="err">צריך את היוזר שלך, כדי שאוכל לוודא שאת עוקבת</div>
         </div>
