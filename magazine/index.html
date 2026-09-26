@@ -76,9 +76,9 @@ section{padding-block:64px}
 
 .cta{
   display:inline-flex; align-items:center; justify-content:center; gap:12px;
-  background:linear-gradient(45deg,#F58529 0%,#DD2A7B 45%,#8134AF 80%,#515BD4 100%); color:#fff; text-decoration:none; border:0; cursor:pointer;
+  background:linear-gradient(90deg,#F58529,#DD2A7B,#8134AF,#515BD4,#8134AF,#DD2A7B,#F58529); background-size:300% 100%; animation:igflow 6s linear infinite; color:#fff; text-decoration:none; border:0; cursor:pointer;
   font-family:var(--sans); font-weight:700; font-size:18px; letter-spacing:.02em;
-  padding:17px 38px; border-radius:2px; margin-top:28px;
+  padding:17px 40px; border-radius:999px; margin-top:28px;
   box-shadow:0 8px 22px rgba(221,42,123,.28); transition:filter .2s, transform .2s;
 }
 .cta:hover{filter:brightness(1.07) saturate(1.1); transform:translateY(-1px)}
@@ -111,6 +111,7 @@ section{padding-block:64px}
   background:var(--paper); border:1px solid var(--line); border-radius:4px; padding:12px 20px;
   box-shadow:var(--shadow); transform:rotate(3deg); font-weight:700; font-size:20px; letter-spacing:.04em; color:var(--ink);
 }
+@keyframes igflow{from{background-position:0% 50%}to{background-position:100% 50%}}
 @keyframes float{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
 
 .strip{border-block:1px solid var(--line); padding-block:16px; background:var(--paper)}
@@ -250,6 +251,7 @@ footer a{color:var(--wine); font-weight:400}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .cover{animation:none}
+  .cta{animation:none}
   .rv{opacity:1; transform:none; transition:none}
   .cta,.cta:hover{transition:none; transform:none}
 }
