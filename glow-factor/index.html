@@ -2,6 +2,24 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9G287R7LSE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9G287R7LSE');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a'); if(!a) return;
+    var nameEl = a.querySelector('.t-name');
+    var label = nameEl ? nameEl.textContent.trim() : (a.textContent || '').trim().slice(0,60);
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('pay.sumit.co.il') > -1){
+      gtag('event','begin_checkout',{item_name:label, link_url:href});
+    } else {
+      gtag('event','link_click',{link_text:label, link_url:href});
+    }
+  }, true);
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Glow Factor גיליון 1: מגזין יופי מודפס חינם לעוקבות | דנית בן סימון</title>
 <meta name="description" content="מגזין מודפס על עור קורן בכל גיל, תזונה, אימונים ואנרגיה גבוהה. נשלח עד הבית בחינם, ואת משלמת על המשלוח בלבד.">

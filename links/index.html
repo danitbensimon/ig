@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9G287R7LSE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9G287R7LSE');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a'); if(!a) return;
+    var nameEl = a.querySelector('.t-name');
+    var label = nameEl ? nameEl.textContent.trim() : (a.textContent || '').trim().slice(0,60);
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('pay.sumit.co.il') > -1){
+      gtag('event','begin_checkout',{item_name:label, link_url:href});
+    } else {
+      gtag('event','link_click',{link_text:label, link_url:href});
+    }
+  }, true);
+</script>
+<title>דנית בן סימון</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@300;400;600;700&display=swap">
+<style>
+:root{
+  direction:rtl;
+  color-scheme: light;
+  --wine:#8C1D2F; --wine-d:#5E1220;
+  --ground:#FCF6F4;
+  --card-a:#FDF1F1; --card-b:#F6D9DD;
+  --card-hi-a:#F9E4E6; --card-hi-b:#EFC6CD;
+  --sand:#F2E7E2;
+  --ink:#2A1F20; --ink-2:#4A3A3E; --line:#EBD2D6;
+  --gold:#A9743F; --sage:#4E6B45;
+  --shadow:0 1px 2px rgba(120,50,60,.06), 0 8px 22px rgba(120,50,60,.09);
+}
+*{box-sizing:border-box}
+body{
+  direction:rtl; margin:0; background:var(--ground); color:var(--ink);
+  font-family:'Assistant', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding-block:40px 60px; padding-inline:20px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:540px; margin-inline:auto; display:flex; flex-direction:column; gap:28px}
+
+.head{display:flex; flex-direction:column; align-items:center; text-align:center; gap:14px}
+.avatar{
+  width:140px; height:140px; border-radius:50%; object-fit:cover; object-position:50% 16%;
+  border:5px solid #fff; box-shadow:var(--shadow); display:block; max-width:100%;
+}
+h1{
+  font-family:'Heebo', system-ui, sans-serif; font-weight:800;
+  font-size:clamp(30px,8vw,38px); margin:0; letter-spacing:-.01em; color:var(--ink);
+}
+.tag{font-size:21px; line-height:1.5; color:var(--ink); margin:0; max-width:32ch; text-wrap:balance}
+.tag b{color:var(--wine); font-weight:700}
+
+.stack{display:flex; flex-direction:column; gap:14px}
+a.tile, .tile.soon{
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:14px;
+  width:100%; max-width:100%;
+  background:linear-gradient(140deg, var(--card-a) 0%, var(--card-b) 100%);
+  border:1px solid var(--line); border-radius:18px;
+  padding:22px 22px 22px 18px; text-decoration:none; color:inherit;
+  box-shadow:var(--shadow); position:relative; overflow:hidden;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+a.tile > div, .tile.soon > div{min-width:0}
+a.tile::before, .tile.soon::before{
+  content:""; position:absolute; inset-inline-start:0; top:0; bottom:0; width:6px; background:var(--wine);
+}
+a.tile:hover{transform:translateY(-2px); box-shadow:0 2px 4px rgba(120,50,60,.08), 0 14px 30px rgba(120,50,60,.14)}
+a.tile:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+
+.eyebrow{
+  font-size:19px; font-weight:700; letter-spacing:.01em; color:var(--gold);
+  margin:0 0 6px;
+}
+.t-name{
+  font-family:'Heebo', system-ui, sans-serif; font-weight:800; font-size:25px;
+  line-height:1.25; margin:0 0 8px; color:var(--ink); overflow-wrap:anywhere;
+}
+.t-desc{font-size:19px; line-height:1.5; color:var(--ink-2); margin:0; overflow-wrap:anywhere}
+.badge{
+  width:54px; height:54px; border-radius:16px; background:#fff; border:1px solid var(--line);
+  display:grid; place-items:center; font-size:27px; line-height:1; flex:none;
+  box-shadow:0 1px 3px rgba(120,50,60,.08);
+}
+.arrow{font-size:30px; color:var(--wine); line-height:1; transform:scaleX(-1); flex:none}
+
+a.tile.free::before{background:var(--sage)}
+a.tile.free .eyebrow{color:var(--sage)}
+a.tile.call::before{background:var(--gold)}
+a.tile.buy::before{background:var(--wine)}
+a.tile.buy{background:linear-gradient(140deg,#F7DEE2 0%,#EFC2CB 100%)}
+a.tile.buy .eyebrow{color:var(--wine); font-weight:800}
+a.tile.call{background:linear-gradient(140deg, var(--card-hi-a) 0%, var(--card-hi-b) 100%)}
+
+.tile.soon{background:linear-gradient(140deg, #F6EFEC 0%, #EADFDA 100%); border-style:dashed}
+.tile.soon::before{background:#D8C6BF}
+.tile.soon .eyebrow{color:var(--ink-2)}
+.tile.soon .t-name{color:var(--ink-2)}
+.pill{
+  font-size:17px; font-weight:700; color:var(--ink-2); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:7px 14px; white-space:nowrap; flex:none;
+}
+
+footer{text-align:center; font-size:18px; line-height:1.6; color:var(--ink-2); margin:0}
+footer a{color:var(--wine); font-weight:600}
+@media (prefers-reduced-motion: reduce){ a.tile{transition:none} a.tile:hover{transform:none} }
+.gf-shine{font-size:1.5em;line-height:1.1;font-weight:900;background:linear-gradient(100deg,#feda75 0%,#fa7e1e 18%,#d62976 36%,#962fbf 54%,#4f5bd5 70%,#fff 78%,#d62976 86%,#fa7e1e 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gfShine 3.2s linear infinite;filter:drop-shadow(0 0 6px rgba(214,41,118,.35))}
+.gf-shine::after{content:" ✦";color:#d62976;-webkit-text-fill-color:#d62976;font-size:.8em;animation:gfTwinkle 1.6s ease-in-out infinite}
+@keyframes gfShine{from{background-position:100% 0}to{background-position:-150% 0}}
+@keyframes gfTwinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.gf-shine,.gf-shine::after{animation:none}}
+.cover-hero{display:block; width:180px; max-width:60vw; transform:rotate(-2deg); animation:coverFloat 7s ease-in-out infinite}
+.cover-hero img{display:block; width:100%; height:auto; aspect-ratio:2/3; object-fit:cover; border-radius:2px 7px 7px 2px; box-shadow:0 2px 4px rgba(60,30,30,.08), 0 22px 44px rgba(94,18,32,.22)}
+@keyframes coverFloat{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.cover-hero{animation:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="head">
+    <a class="cover-hero" href="../glow-factor/" aria-label="Glow Factor גיליון 1"><img src="../glow-factor/cover-v3.webp" alt="שער מגזין Glow Factor גיליון 1 עם דנית בן סימון" width="900" height="1351"></a>
+    <h1>דנית בן סימון</h1>
+    <p class="tag">בת 42, נושקת ל-30. <b>תזונה, מיקרוביום ועור קורן מבפנים.</b> ההזדקנות לאחור מתחילה כאן 👇</p>
+  </header>
+
+  <nav class="stack" aria-label="קישורים">
+
+    <a class="tile free" href="../glow-factor/">
+      <span class="badge" aria-hidden="true">📖</span>
+      <div>
+        <p class="eyebrow" style="color:var(--ink)">חינם לעוקבות</p>
+        <p class="t-name"><span class="gf-shine">Glow Factor</span> המגזין המודפס</p>
+        <p class="t-desc">יופי בכל גיל, עור קורן מבפנים, תזונה ואימונים, וגם מה שלא עובד. נשלח אלייך הביתה עם דוגמיות, ואת משלמת על המשלוח בלבד.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+    <a class="tile buy" href="../guide.html">
+      <span class="badge" aria-hidden="true">🩸</span>
+      <div>
+        <p class="eyebrow">המדריך המלא</p>
+        <p class="t-name">המדריך לפריטין ולתזונה אנטי־דלקתית</p>
+        <p class="t-desc">הבדיקות שלך תקינות ואת עדיין גמורה? יש לזה סיבה, ויש לזה תפריט. כל מה שצריך כדי להעלות פריטין ולהוריד את הדלקת שחוסמת את הספיגה.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+    <a class="tile free" href="https://kglowskin.app">
+      <span class="badge" aria-hidden="true">✨</span>
+      <div>
+        <p class="eyebrow">מתנה לעוקבות</p>
+        <p class="t-name">שגרת עור קוריאנית לגיל 40+</p>
+        <p class="t-desc">עוקבות מקבלות את השגרה הראשונה שלהן, בוקר וערב, חינם למייל. המוצרים הקוריאניים המדויקים, באיזה סדר ובאיזו שעה.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+    <a class="tile" href="https://fermentationacademy.co.il/checkout/?add-to-cart=39622&amp;ref=11">
+      <span class="badge" aria-hidden="true">🫙</span>
+      <div>
+        <p class="eyebrow">פרוביוטיקה בצנצנת</p>
+        <p class="t-name">ערכת ההתססה הביתית</p>
+        <p class="t-desc">כרוב כבוש חי שמחזיר למעיים את החיידקים הטובים, גם אחרי אנטיביוטיקה. עולה שקלים בודדים, במקום מותססים מפוסטרים מהמדף שהחיידקים בהם כבר מתים.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+    <a class="tile" href="https://iherb.co/UEqpSs6m">
+      <span class="badge" aria-hidden="true">🛒</span>
+      <div>
+        <p class="eyebrow">רשימת קניות באייהרב</p>
+        <p class="t-name">מוצרים לעור קורן ולבית נקי</p>
+        <p class="t-desc">לעור קורן, ולבית ולגוף נקיים ממשבשי הורמונים. רשימה אחת מסודרת, בלי לחפש.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+
+    <div class="tile soon">
+      <span class="badge" aria-hidden="true">🚶‍♀️</span>
+      <div>
+        <p class="eyebrow">בקרוב · הכי מבוקש</p>
+        <p class="t-name">ההליכון עם הרטט</p>
+        <p class="t-desc">הליכון עם רטט להליכה בבית, שעוזר לשינה ומחליק צלוליט. שאלתן עליו כל כך הרבה שהוא חייב להיכנס לכאן.</p>
+      </div>
+      <span class="pill">בהכנה</span>
+    </div>
+
+    <a class="tile" href="https://instagram.com/danitbensimon">
+      <span class="badge" aria-hidden="true">📸</span>
+      <div>
+        <p class="eyebrow">כל יום</p>
+        <p class="t-name">‎@danitbensimon</p>
+        <p class="t-desc">התכנים, הבדיקות והשאלות, באינסטגרם.</p>
+      </div>
+      <span class="arrow" aria-hidden="true">›</span>
+    </a>
+
+  </nav>
+
+  <footer>
+    התכנים כאן הם מידע כללי וניסיון אישי, ואינם ייעוץ רפואי.<br>
+    פריטין נמוך שחוזר על עצמו מחייב בירור עם רופא.
+  </footer>
+</div>
+
+</body>
+</html>
