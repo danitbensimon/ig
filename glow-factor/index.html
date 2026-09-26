@@ -71,7 +71,7 @@ section{padding-block:64px}
 .hero h1{font-weight:700; letter-spacing:-.01em; font-size:clamp(36px,9.4vw,64px); line-height:1.12; text-wrap:balance}
 .hero h1 em{font-style:normal; font-weight:700; background:var(--ig); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero .subhead{font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.35; color:var(--ink); margin:16px auto 0; max-width:30ch; text-wrap:balance}
-.hero .lead{font-size:20px; line-height:1.6; font-weight:400; color:var(--ink-2); margin:10px auto 0; max-width:34ch; text-wrap:balance}
+.hero .lead{font-size:20px; line-height:1.6; font-weight:400; color:var(--ink-2); margin:10px auto 0; max-width:36ch; text-wrap:pretty}
 .hero .lead b{color:var(--ink); font-weight:600}
 
 .cta{
@@ -84,6 +84,7 @@ section{padding-block:64px}
 .cta:hover{filter:brightness(1.07) saturate(1.1); transform:translateY(-1px)}
 .cta:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
 .cta .arr{display:inline-block; font-size:15px}
+.cta-wrap{display:inline-flex; flex-direction:column; align-items:center}
 .micro{font-size:15px; color:var(--ink-2); margin-top:12px; font-weight:400}
 .micro b{color:var(--ink); font-weight:600}
 
@@ -230,7 +231,8 @@ footer a{color:var(--wine); font-weight:400}
   .hero{padding-block:70px 90px}
   .hero-grid{grid-template-columns:1.1fr .9fr; gap:50px}
   .hero-copy{text-align:right}
-  .hero .lead{margin-inline:0; font-size:21px}
+  .hero .lead{margin-inline:0; font-size:21px; max-width:none}
+  .hero .subhead{max-width:none}
   .hero .subhead{margin-inline:0; font-size:27px}
   .badges{align-items:flex-start}
   .cover-wrap{order:0; padding:10px 0 20px}
@@ -269,9 +271,11 @@ footer a{color:var(--wine); font-weight:400}
       </div>
       <h1>עור קורן ואנרגיה גבוהה מתחילים <em>מבפנים</em></h1>
       <p class="subhead">מגזין מודפס על יופי בכל גיל, תזונה ואימונים</p>
-      <p class="lead">השגרה שהחזירה לי את הזוהר בגיל 42. במקום לשמור רילסים ולשכוח, הכל מחכה לך במגזין אחד בבית.</p>
-      <a class="cta" href="#signup">שריינו לי עותק בחינם <span class="arr" aria-hidden="true">←</span></a>
-      <p class="micro"><b>רשימת המתנה · גיליון 1</b></p>
+      <p class="lead">השגרה שהחזירה לי את הזוהר בגיל&nbsp;42.<br>במקום לשמור רילסים ולשכוח, הכל מחכה לך במגזין אחד בבית.</p>
+      <div class="cta-wrap">
+        <a class="cta" href="#signup">שריינו לי עותק בחינם <span class="arr" aria-hidden="true">←</span></a>
+        <p class="micro"><b>רשימת המתנה · גיליון 1</b></p>
+      </div>
     </div>
 
     <div class="cover-wrap">
