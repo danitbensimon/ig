@@ -194,6 +194,15 @@ input.bad{border-color:#B03A2E; background:#FFF8F7}
 .done .big{font-family:var(--serif); font-size:15px; letter-spacing:.2em; color:var(--gold)}
 .done h2{font-size:32px; margin:10px 0 10px}
 .done p{color:var(--ink-2); margin:0 auto; max-width:34ch; font-weight:400}
+.upsell{margin-top:30px; padding:24px 18px 22px; border-top:1px solid var(--line); text-align:center}
+.up-kicker{font-size:13px; font-weight:700; letter-spacing:.14em; color:var(--gold); margin:0 0 6px}
+.upsell h3{font-size:22px; line-height:1.3; margin:0 0 8px}
+.upsell p{margin:0 auto; max-width:34ch}
+.up-price{display:flex; gap:10px; align-items:baseline; justify-content:center; margin:14px 0 2px}
+.up-price .then{text-decoration:line-through; color:var(--ink-2); font-size:18px}
+.up-price .now{font-family:var(--serif); font-weight:800; font-size:30px; color:var(--ink)}
+.up-price .tag{font-size:13px; font-weight:700; color:#fff; background:linear-gradient(90deg,#F77737,#E1306C); border-radius:999px; padding:4px 10px}
+.upsell .cta{margin-top:14px}
 .done .share{display:inline-flex; margin-top:22px; gap:8px; align-items:center; font-weight:600; font-family:var(--sans);
   color:var(--wine); border:1px solid var(--wine); border-radius:2px; padding:11px 24px; background:#fff; font-size:16px; cursor:pointer}
 .form-card.sent form{display:none}
@@ -479,6 +488,13 @@ footer a{color:var(--wine); font-weight:400}
         <h2>העותק שלך שמור!</h2>
         <p>ברגע שהמגזין יוצא מהדפוס, תקבלי ממני מייל עם לינק לתשלום המשלוח. שווה לבדוק גם בקידומי מכירות.</p>
         <button class="share" type="button" id="share">שלחי לחברה שתשריין גם</button>
+        <div class="upsell">
+          <p class="up-kicker">עד שהמגזין מגיע</p>
+          <h3>המדריך לפריטין ולתזונה אנטי־דלקתית</h3>
+          <p>הבדיקות שלך תקינות ואת עדיין גמורה? 41 עמודים עם רשימת הבדיקות לבקש, חוקי הספיגה ותפריט שבועי מלא.</p>
+          <div class="up-price"><span class="then">99 ₪</span><span class="now">79 ₪</span><span class="tag">הנחה לחגים</span></div>
+          <a class="cta" href="https://ig.danitbensimon.com/guide.html?utm_source=magazine_thankyou">למדריך המלא <span class="arr" aria-hidden="true">←</span></a>
+        </div>
       </div>
     </div>
   </div>
