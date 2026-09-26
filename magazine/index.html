@@ -126,6 +126,8 @@ section{padding-block:64px}
 .page p{margin:0; color:var(--ink-2); font-size:17.5px; font-weight:400}
 .page.gift{background:var(--blush); border:0; padding:26px 22px; margin-top:22px; border-radius:2px}
 .page.gift .num{color:var(--sage)}
+.page.honest{background:#F7ECEA; border:1px solid #EAD3CF; padding:26px 22px; margin-top:22px; border-radius:2px}
+.page.honest .tag{color:var(--wine)}
 .page .tag{display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.14em; color:var(--sage); margin-bottom:4px}
 
 /* steps */
@@ -228,7 +230,7 @@ footer a{color:var(--wine); font-weight:400}
   .sticker{width:108px; height:108px; font-size:26px; left:2%; top:38%}
   .sample-tag{right:6%; bottom:14%}
   .toc{grid-template-columns:1fr 1fr; column-gap:48px}
-  .page.gift{grid-column:1/-1}
+  .page.gift,.page.honest{grid-column:1/-1}
   .steps{grid-template-columns:repeat(3,1fr); gap:36px}
   .steps li{grid-template-columns:1fr; text-align:center; justify-items:center}
   .row{grid-template-columns:1fr 1fr}
@@ -275,6 +277,7 @@ footer a{color:var(--wine); font-weight:400}
 <div class="strip">
   <ul>
     <li><span>✦</span> תזונה · אימונים · עור קורן מבפנים</li>
+    <li><span>✦</span> גם מה שלא עובד, בלי פילטר</li>
     <li><span>✦</span> מודפס על נייר, עד הבית</li>
     <li><span>✦</span> דוגמיות מוצרים בתוך המעטפה</li>
     <li><span>✦</span> משלמת על המשלוח בלבד</li>
@@ -284,7 +287,7 @@ footer a{color:var(--wine); font-weight:400}
 <section id="inside">
   <div class="container">
     <p class="kicker rv">מה בפנים</p>
-    <h2 class="h2 rv">7 פרקים שיעזרו לך לזרוח מבפנים ומבחוץ</h2>
+    <h2 class="h2 rv">8 פרקים שיעזרו לך לזרוח מבפנים ומבחוץ</h2>
     <p class="sub rv">מה שקורה בצלחת, בשינה ובתנועה רואים אחר כך על הפנים. בלי מונחים של רופאים ובלי לחפש בין 200 רילסים. מה עושים, באיזה סדר, ומה קונים.</p>
 
     <div class="toc">
@@ -336,8 +339,17 @@ footer a{color:var(--wine); font-weight:400}
         </div>
       </article>
 
-      <article class="page gift rv">
+      <article class="page honest rv">
         <div class="num">07</div>
+        <div>
+          <span class="tag">בלי פילטר</span>
+          <h3>הדיס-המלצות שלי: מה לא עובד</h3>
+          <p>באינסטגרם כולם ממליצים על הכל, וקשה לדעת למה להאמין. כאן תמצאי את המוצרים, התוספים והטרנדים שניסיתי על עצמי ולא עבדו, כדי שלא תבזבזי עליהם כסף וזמן.</p>
+        </div>
+      </article>
+
+      <article class="page gift rv">
+        <div class="num">08</div>
         <div>
           <span class="tag">מתנה</span>
           <h3>דוגמיות חינם בתוך המעטפה</h3>
