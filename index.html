@@ -64,7 +64,7 @@ section{padding-block:64px}
 
 .ribbon{
   background:linear-gradient(90deg,#F6E6E3,#FBF1EE 50%,#F6E6E3); color:var(--wine); text-align:center; font-weight:700; font-size:18px;
-  padding:10px 16px; letter-spacing:.14em; border-bottom:1px solid #E6CFA9;
+  padding:10px 12px; letter-spacing:.02em; border-bottom:1px solid #E6CFA9; white-space:nowrap;
 }
 .ribbon::before,.ribbon::after{content:"✦"; color:var(--gold); font-size:14px; margin-inline:12px; vertical-align:2px}
 
@@ -86,7 +86,11 @@ section{padding-block:64px}
 }
 .eyebrow i{font-style:normal; color:var(--line-2)}
 .eyebrow::before{content:""; width:34px; height:1px; background:var(--gold)}
-.hero h1{font-weight:700; letter-spacing:-.01em; font-size:clamp(36px,9.4vw,64px); line-height:1.12; text-wrap:balance}
+.hero h1{font-weight:800; letter-spacing:-.01em; font-size:clamp(44px,12.5vw,96px); line-height:1.05; white-space:nowrap}
+.gf-shine{display:inline-block; font-weight:800; background:linear-gradient(100deg,#feda75 0%,#fa7e1e 18%,#d62976 36%,#962fbf 54%,#4f5bd5 70%,#fff 78%,#d62976 86%,#fa7e1e 100%); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gfShine 3.2s linear infinite; filter:drop-shadow(0 0 8px rgba(214,41,118,.3)); padding-inline:.04em}
+.gf-shine::after{content:" ✦"; color:#d62976; -webkit-text-fill-color:#d62976; font-size:.45em; vertical-align:.9em; display:inline-block; animation:gfTwinkle 1.6s ease-in-out infinite}
+@keyframes gfShine{from{background-position:100% 0}to{background-position:-150% 0}}
+@keyframes gfTwinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
 .hero h1 em{font-style:normal; font-weight:700; background:var(--ig); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero .subhead{font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.35; color:var(--ink); margin:16px auto 0; max-width:30ch; text-wrap:balance}
 .hero .lead{font-size:20px; line-height:1.6; font-weight:400; color:var(--ink-2); margin:10px auto 0; max-width:36ch; text-wrap:pretty}
@@ -134,11 +138,10 @@ section{padding-block:64px}
 @keyframes igflow{from{background-position:0% 50%}to{background-position:100% 50%}}
 @keyframes float{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-1.5deg) translateY(-6px)}}
 
-.strip{border-block:1px solid var(--line); padding-block:16px; background:var(--paper)}
-.strip ul{list-style:none; margin:0; padding:0 16px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 28px;
-  font-size:15px; letter-spacing:.06em; color:var(--ink-2)}
-.strip li{display:flex; align-items:center; gap:8px}
-.strip li span{color:var(--gold); font-size:14px}
+.strip{padding-block:22px 6px}
+.strip ul{list-style:none; margin:0 auto; padding:0 16px; max-width:760px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px}
+.strip li{display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:#fff; border:1px solid var(--line-2); box-shadow:0 1px 3px rgba(60,30,30,.06); font-size:16px; font-weight:600; color:var(--ink); line-height:1.2}
+.strip li span{font-size:16px; background:var(--ig); -webkit-background-clip:text; background-clip:text; color:transparent}
 
 .kicker{font-size:14px; font-weight:600; color:var(--gold); letter-spacing:.18em; margin:0 0 12px; text-align:center}
 .h2{font-weight:700; font-size:clamp(30px,7vw,44px); line-height:1.2; text-align:center; text-wrap:balance}
@@ -281,6 +284,7 @@ footer a{color:var(--wine); font-weight:400}
   html{scroll-behavior:auto}
   .cover{animation:none}
   .cta{animation:none}
+  .gf-shine,.gf-shine::after{animation:none}
   .sticker,.sample-tag{animation:none}
   .rv{opacity:1; transform:none; transition:none}
   .cta,.cta:hover{transition:none; transform:none}
@@ -297,7 +301,7 @@ footer a{color:var(--wine); font-weight:400}
       <div class="badges">
         <a class="igbadge" href="https://instagram.com/danitbensimon" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#igg)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>חינם לעוקבות בלבד</span></a>
       </div>
-      <h1>עור קורן ואנרגיה גבוהה מתחילים <em>מבפנים</em></h1>
+      <h1><span class="gf-shine" lang="en" dir="ltr">Glow Factor</span></h1>
       <p class="subhead">מגזין מודפס על יופי בכל גיל, תזונה ואימונים</p>
       <p class="lead">השגרה שהחזירה לי את הזוהר בגיל&nbsp;42.<br>במקום לשמור רילסים ולשכוח, הכל מחכה לך במגזין אחד בבית.</p>
       <div class="cta-wrap">
@@ -311,7 +315,7 @@ footer a{color:var(--wine); font-weight:400}
       <div class="cover">
         <img src="glow-factor/cover-v3.webp" alt="שער המגזין עם דנית בן סימון" width="900" height="1351" fetchpriority="high">
         <div class="sticker"><div><small>כולל</small>דיס-<br>המלצות</div></div>
-        <div class="sample-tag">עם דוגמיות בפנים</div>
+        <div class="sample-tag">דוגמיות מתנה!</div>
       </div>
     </div>
   </div>
@@ -319,10 +323,12 @@ footer a{color:var(--wine); font-weight:400}
 
 <div class="strip">
   <ul>
-    <li><span>✦</span> תזונה · אימונים · עור קורן מבפנים</li>
+    <li><span>✦</span> תזונה</li>
+    <li><span>✦</span> אימונים</li>
+    <li><span>✦</span> עור קורן מבפנים</li>
     <li><span>✦</span> גם מה שלא עובד, בלי פילטר</li>
-    <li><span>✦</span> מודפס על נייר, עד הבית</li>
-    <li><span>✦</span> דוגמיות מוצרים בתוך המעטפה</li>
+    <li><span>✦</span> מודפס עד הבית</li>
+    <li><span>✦</span> דוגמיות מוצרים</li>
     <li><span>✦</span> משלמת על המשלוח בלבד</li>
   </ul>
 </div>
