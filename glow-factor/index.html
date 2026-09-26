@@ -87,9 +87,9 @@ section{padding-block:64px}
 .eyebrow i{font-style:normal; color:var(--line-2)}
 .eyebrow::before{content:""; width:34px; height:1px; background:var(--gold)}
 .hero h1{font-weight:800; letter-spacing:-.01em; font-size:clamp(44px,12.5vw,96px); line-height:1.05; white-space:nowrap}
-.gf-shine{display:inline-block; font-family:'Rubik',sans-serif; font-weight:700; background:linear-gradient(100deg,#D6336C 0%,#EC4F8B 30%,#F47DAE 50%,#C2185B 75%,#D6336C 100%); background-size:220% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gfShine 7s ease-in-out infinite alternate; padding-inline:.04em}
+.gf-shine{display:inline-block; font-family:'Rubik',sans-serif; font-weight:700; background:linear-gradient(100deg,#C2185B 0%,#E0407F 30%,#FFD6E6 45%,#E0407F 60%,#C2185B 80%,#E0407F 100%); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:gfShine 3.5s linear infinite; padding-inline:.04em}
 .gf-shine::after{content:" ✦"; color:#D6336C; -webkit-text-fill-color:#D6336C; font-size:.45em; vertical-align:.9em; display:inline-block; animation:gfTwinkle 1.6s ease-in-out infinite}
-@keyframes gfShine{from{background-position:0% 0}to{background-position:100% 0}}}
+@keyframes gfShine{from{background-position:100% 0}to{background-position:-150% 0}}}
 @keyframes gfTwinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
 .hero h1 em{font-style:normal; font-weight:700; background:var(--ig); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero .subhead{font-family:var(--serif); font-weight:600; font-size:23px; line-height:1.35; color:var(--ink); margin:16px auto 0; max-width:30ch; text-wrap:balance}
