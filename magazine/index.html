@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>מגזין מבפנים</title>
-<meta name="description" content="מגזין מודפס על תזונה, אימונים, עור קורן ואנרגיה גבוהה. נשלח עד הבית בחינם, ואת משלמת על המשלוח בלבד.">
+<meta name="description" content="מגזין מודפס על עור קורן בכל גיל, תזונה, אימונים ואנרגיה גבוהה. נשלח עד הבית בחינם, ואת משלמת על המשלוח בלבד.">
 <meta property="og:title" content="עור קורן ואנרגיה גבוהה מתחילים מבפנים">
-<meta property="og:description" content="מגזין מודפס על תזונה, אימונים ועור, עם דוגמיות בפנים. נשלח עד הבית בחינם, ואת משלמת על המשלוח בלבד.">
+<meta property="og:description" content="מגזין מודפס על עור קורן בכל גיל, תזונה ואימונים, עם דוגמיות בפנים. נשלח עד הבית בחינם, ואת משלמת על המשלוח בלבד.">
 <meta property="og:image" content="http://ig.danitbensimon.com/magazine/og.jpg">
 <meta property="og:url" content="http://ig.danitbensimon.com/magazine/">
 <meta name="twitter:card" content="summary_large_image">
@@ -68,12 +68,12 @@ section{padding-block:64px}
 
 .cta{
   display:inline-flex; align-items:center; justify-content:center; gap:12px;
-  background:var(--wine); color:#fff; text-decoration:none; border:0; cursor:pointer;
-  font-family:var(--sans); font-weight:600; font-size:18px; letter-spacing:.02em;
+  background:linear-gradient(45deg,#F58529 0%,#DD2A7B 45%,#8134AF 80%,#515BD4 100%); color:#fff; text-decoration:none; border:0; cursor:pointer;
+  font-family:var(--sans); font-weight:700; font-size:18px; letter-spacing:.02em;
   padding:17px 38px; border-radius:2px; margin-top:28px;
-  box-shadow:0 8px 22px rgba(122,26,43,.18); transition:background .2s, transform .2s;
+  box-shadow:0 8px 22px rgba(221,42,123,.28); transition:filter .2s, transform .2s;
 }
-.cta:hover{background:var(--wine-d); transform:translateY(-1px)}
+.cta:hover{filter:brightness(1.07) saturate(1.1); transform:translateY(-1px)}
 .cta:focus-visible{outline:2px solid var(--gold); outline-offset:3px}
 .cta .arr{display:inline-block; font-size:15px}
 .micro{font-size:15px; color:var(--ink-2); margin-top:12px; font-weight:400}
@@ -253,7 +253,7 @@ footer a{color:var(--wine); font-weight:400}
         <a class="igbadge" href="https://instagram.com/danitbensimon" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#igg)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>חינם לעוקבות בלבד</span></a>
       </div>
       <h1>עור קורן ואנרגיה גבוהה מתחילים <em>מבפנים</em></h1>
-      <p class="lead">מגזין מודפס על תזונה, אימונים ועור. לעוקבות שלי באינסטגרם הוא נשלח הביתה בחינם, <b>ואת משלמת על המשלוח בלבד.</b></p>
+      <p class="lead">מגזין מודפס על עור קורן בכל גיל, תזונה ואימונים. לעוקבות שלי באינסטגרם הוא נשלח הביתה בחינם, <b>ואת משלמת על המשלוח בלבד.</b></p>
       <a class="cta" href="#signup">שריינו לי עותק בחינם <span class="arr" aria-hidden="true">←</span></a>
       <p class="micro"><b>עכשיו לא תשלמי כלום.</b></p>
     </div>
@@ -589,7 +589,7 @@ const HS_HOSTS = ['https://api-eu1.hsforms.com', 'https://api.hsforms.com'];
 
   document.getElementById('share').addEventListener('click', async () => {
     const url = location.origin + location.pathname;
-    const text = 'דנית בן סימון מוציאה מגזין מודפס על תזונה, אימונים ועור, בחינם עד הבית. שריינתי עותק, תשרייני גם:';
+    const text = 'דנית בן סימון מוציאה מגזין מודפס על עור קורן בכל גיל, תזונה ואימונים, בחינם עד הבית. שריינתי עותק, תשרייני גם:';
     if (navigator.share) { try { await navigator.share({title:'מגזין מבפנים', text, url}); } catch(_){} }
     else location.href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
   });
