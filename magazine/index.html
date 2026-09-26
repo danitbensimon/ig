@@ -39,9 +39,10 @@ h1,h2,h3{font-family:var(--serif); font-weight:700; margin:0; color:var(--ink); 
 section{padding-block:64px}
 
 .ribbon{
-  background:var(--ink); color:#EFE4DF; text-align:center; font-weight:400; font-size:14px;
-  padding:9px 16px; letter-spacing:.12em;
+  background:linear-gradient(90deg,#F6E6E3,#FBF1EE 50%,#F6E6E3); color:var(--wine); text-align:center; font-weight:600; font-size:14px;
+  padding:10px 16px; letter-spacing:.14em; border-bottom:1px solid #E6CFA9;
 }
+.ribbon::before,.ribbon::after{content:"✦"; color:var(--gold); font-size:10px; margin-inline:12px; vertical-align:2px}
 
 /* hero */
 .hero{position:relative; overflow:hidden; padding-block:30px 60px;
