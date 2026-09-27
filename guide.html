@@ -119,6 +119,30 @@ details[open] summary::after{content:"−"}
 details p{margin:12px 0 0; color:var(--ink-2); font-size:18px}
 
 footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
+/* quiz */
+.qz-sub{font-size:19px; color:var(--ink); margin:0 0 16px; text-align:center}
+.qz h2{text-align:center}
+.qz-count{font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; color:var(--wine); text-align:center}
+.qz-bar{height:6px; background:var(--line); border-radius:99px; margin:10px auto 20px; max-width:260px; overflow:hidden}
+.qz-bar i{display:block; height:100%; width:25%; background:linear-gradient(90deg,#F48FB6,#EC5F97); border-radius:99px; transition:width .35s ease}
+.qz-q{display:none}
+.qz-q.on{display:block; animation:qzIn .35s ease}
+@keyframes qzIn{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+.qz-q h3{font-size:24px; text-align:center; margin-bottom:16px; color:var(--ink)}
+.qz-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.qz-opt{all:unset; box-sizing:border-box; cursor:pointer; background:#fff; border:2px solid var(--line); border-radius:16px; overflow:hidden;
+  display:flex; flex-direction:column; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease}
+.qz-opt:hover{transform:translateY(-3px); border-color:#EC5F97; box-shadow:0 8px 20px rgba(236,95,151,.22)}
+.qz-opt:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.qz-opt.pick{border-color:#EC5F97; box-shadow:0 0 0 3px rgba(236,95,151,.35)}
+.qz-opt img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block}
+.qz-opt b{font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; line-height:1.3; padding:12px 10px; text-align:center; color:var(--ink)}
+.qz-num{aspect-ratio:4/3; display:grid; place-items:center; background:linear-gradient(140deg,var(--card-a),var(--card-b));
+  font-family:'Heebo',sans-serif; font-weight:900; font-size:36px; color:var(--wine)}
+.qz-res ul{margin:4px 0 22px}
+.qz-res li{font-size:19px}
+.qz-again{all:unset; cursor:pointer; display:block; margin:14px auto 0; font-size:18px; font-weight:600; color:var(--wine); text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.qz-q.on{animation:none}.qz-opt{transition:none}}
 </style>
 </head>
 <body>
@@ -139,6 +163,61 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
         <p class="cd-t">79 ₪ ו-4 בונוסים בשווי 286 ₪ עד 20.10</p>
         <div class="cd-row"><span><b data-d>0</b>ימים</span><span><b data-h>0</b>שעות</span><span><b data-m>0</b>דקות</span><span><b data-s>0</b>שניות</span></div>
       </div>
+    </div>
+  </section>
+
+  <section class="card qz" id="quiz" aria-live="polite">
+    <h2>המדריך מתאים לך?</h2>
+    <p class="qz-sub">4 שאלות קצרות. לחצי על התמונה שהכי מתאימה לך.</p>
+    <div class="qz-count" id="qzCount">שאלה 1 מתוך 4</div>
+    <div class="qz-bar"><i id="qzBar"></i></div>
+
+    <div class="qz-q on" data-q="sym">
+      <h3>מה הכי מפריע לך ביום־יום?</h3>
+      <div class="qz-grid">
+        <button class="qz-opt" data-v="tired"><img src="quiz/q1-tired.webp" alt="" loading="lazy"><b>עייפות מהבוקר</b></button>
+        <button class="qz-opt" data-v="hair"><img src="quiz/q1-hair.webp" alt="" loading="lazy"><b>נשירת שיער</b></button>
+        <button class="qz-opt" data-v="legs"><img src="quiz/q1-legs.webp" alt="" loading="lazy"><b>רגליים שלא נרגעות בלילה</b></button>
+        <button class="qz-opt" data-v="focus"><img src="quiz/q1-focus.webp" alt="" loading="lazy"><b>קשה לי להתרכז</b></button>
+      </div>
+    </div>
+
+    <div class="qz-q" data-q="fer">
+      <h3>מה היה הפריטין בבדיקה האחרונה?</h3>
+      <div class="qz-grid">
+        <button class="qz-opt" data-v="low"><span class="qz-num"><bdi dir="ltr">&lt;30</bdi></span><b>מתחת ל-30</b></button>
+        <button class="qz-opt" data-v="mid"><span class="qz-num"><bdi dir="ltr">30-50</bdi></span><b>30 עד 50</b></button>
+        <button class="qz-opt" data-v="high"><span class="qz-num"><bdi dir="ltr">50+</bdi></span><b>מעל 50</b></button>
+        <button class="qz-opt" data-v="none"><span class="qz-num">?</span><b>לא בדקתי</b></button>
+      </div>
+    </div>
+
+    <div class="qz-q" data-q="sup">
+      <h3>לקחת תוסף ברזל?</h3>
+      <div class="qz-grid">
+        <button class="qz-opt" data-v="stuck"><img src="quiz/q3-nochange.webp" alt="" loading="lazy"><b>כן, והפריטין לא עלה</b></button>
+        <button class="qz-opt" data-v="up"><img src="quiz/q3-up.webp" alt="" loading="lazy"><b>כן, והוא עלה</b></button>
+        <button class="qz-opt" data-v="no"><img src="quiz/q3-no.webp" alt="" loading="lazy"><b>לא לקחתי</b></button>
+      </div>
+    </div>
+
+    <div class="qz-q" data-q="gut">
+      <h3>איך הבטן שלך אחרי ארוחות?</h3>
+      <div class="qz-grid">
+        <button class="qz-opt" data-v="bloat"><img src="quiz/q4-bloat.webp" alt="" loading="lazy"><b>נפוחה</b></button>
+        <button class="qz-opt" data-v="irr"><img src="quiz/q4-irregular.webp" alt="" loading="lazy"><b>עצירות או שלשול</b></button>
+        <button class="qz-opt" data-v="fine"><img src="quiz/q4-fine.webp" alt="" loading="lazy"><b>רגועה</b></button>
+      </div>
+    </div>
+
+    <div class="qz-q qz-res" data-q="res">
+      <h3>מה המדריך ייתן לך</h3>
+      <ul id="qzList"></ul>
+      <div class="cta">
+        <a class="buy" href="#price">לרכישת המדריך בהנחה לחגים</a>
+        <p class="fine">79 ₪ ו-4 בונוסים, רק עד 20.10</p>
+      </div>
+      <button class="qz-again" id="qzAgain">לענות שוב</button>
     </div>
   </section>
 
@@ -324,6 +403,52 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
     document.querySelectorAll('a.buy').forEach(function(a){ if(a.getAttribute('href')==='#price') a.textContent='לרכישת המדריך'; });
   }
   if(tick()){ var t=setInterval(function(){ if(!tick()) clearInterval(t); },1000); }
+})();
+</script>
+<script>
+(function(){
+  var qz=document.getElementById('quiz'); if(!qz) return;
+  var steps=[].slice.call(qz.querySelectorAll('.qz-q')), n=steps.length-1, i=0, a={};
+  var T={
+    sym:{tired:'<b>עייפות מהבוקר:</b> פרק 2 מסביר מה קורה לגוף כשהפריטין נמוך שנים.',
+         hair:'<b>נשירת שיער:</b> כשהשיער נושר, מכוונים לרוב לפריטין גבוה יותר. פרק 5 מראה לאיזה מספר לכוון.',
+         legs:'<b>רגליים שלא נרגעות בלילה:</b> זו תסמונת הרגליים חסרות המנוחה. פרק 2 מסביר את הקשר לפריטין, ופרק 5 מראה לאיזה מספר לכוון.',
+         focus:'<b>קושי להתרכז:</b> פרק 2 מסביר מה קורה לגוף כשהפריטין נמוך שנים.'},
+    fer:{low:'<b>פריטין מתחת ל-30:</b> נשים רבות כבר מרגישות תסמינים ברמה הזו, גם בלי אנמיה.',
+         mid:'<b>פריטין 30 עד 50:</b> הבדיקה אומרת שזה תקין, ורוב הנשים מתחילות להרגיש הבדל באנרגיה רק סביב 50 עד 70.',
+         high:'<b>פריטין מעל 50:</b> בפרק 3 תמצאי מה עוד לבקש בבדיקה הבאה כשהעייפות נשארת.',
+         none:'<b>עוד לא בדקת:</b> בפרק 3 תמצאי בדיוק מה לבקש מהרופא.'},
+    sup:{stuck:'<b>תוסף שלא העלה את הפריטין:</b> כשזה קורה, הבעיה היא לרוב בספיגה. פרק 4 מסביר מה חוסם אותה, ופרק 8 מה עוזר לה.',
+         up:'<b>התוסף עבד:</b> התפריט השבועי עוזר לך להמשיך לקבל ברזל מהאוכל.',
+         no:'<b>בלי תוסף:</b> התפריט השבועי נותן בערך 15 עד 20 מ״ג ברזל ביום מהאוכל.'},
+    gut:{bloat:'<b>בטן נפוחה:</b> בונוס התזונה האנטי־דלקתית מראה מה להוריד מהצלחת ואיך מכינים כרוב כבוש בבית.',
+         irr:'<b>עצירות או שלשול:</b> בונוס התזונה האנטי־דלקתית מראה מה להוריד מהצלחת ואיך מכינים כרוב כבוש בבית.',
+         fine:'<b>בטן רגועה:</b> אפשר להתחיל ישר מהתפריט השבועי.'}
+  };
+  function show(k){
+    steps.forEach(function(s,j){s.classList.toggle('on',j===k)});
+    document.getElementById('qzCount').textContent = k<n ? 'שאלה '+(k+1)+' מתוך '+n : 'התשובה שלך';
+    document.getElementById('qzBar').style.width = ((Math.min(k+1,n))/n*100)+'%';
+  }
+  qz.addEventListener('click',function(e){
+    var o=e.target.closest('.qz-opt'); if(!o) return;
+    var q=o.closest('.qz-q'), key=q.dataset.q;
+    q.querySelectorAll('.qz-opt').forEach(function(b){b.classList.remove('pick')}); o.classList.add('pick');
+    a[key]=o.dataset.v;
+    if(window.gtag) gtag('event','quiz_answer',{question:key, answer:a[key]});
+    setTimeout(function(){
+      i++;
+      if(i===n){
+        document.getElementById('qzList').innerHTML=['sym','fer','sup','gut'].map(function(k){return '<li class="tick">'+T[k][a[k]]+'</li>'}).join('');
+        if(window.gtag) gtag('event','quiz_complete',a);
+      }
+      show(i);
+      qz.scrollIntoView({behavior:'smooth',block:'start'});
+    },260);
+  });
+  document.getElementById('qzAgain').addEventListener('click',function(){
+    a={}; i=0; qz.querySelectorAll('.pick').forEach(function(b){b.classList.remove('pick')}); show(0);
+  });
 })();
 </script>
 </body>
