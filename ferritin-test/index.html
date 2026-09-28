@@ -208,6 +208,15 @@ button.buy:disabled{opacity:.7; cursor:wait}
 
 .igonly{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:18px;color:var(--ink)}
 .igonly .igi{width:24px;height:24px;flex:none}
+
+.up-h{text-align:center; font-size:24px; color:var(--wine); margin:0 0 14px}
+.xl{display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; box-shadow:var(--shadow); text-align:right}
+.xl:hover{border-color:var(--wine)}
+.xl .xi{font-size:28px; line-height:1; flex:none}
+.xl b{display:block; font-size:19px; line-height:1.3}
+.xl small{display:block; font-size:17px; color:var(--ink-2); line-height:1.45; margin-top:2px}
+
+#form[hidden],#done[hidden]{display:none !important}
 </style>
 </head>
 <body>
@@ -227,15 +236,6 @@ button.buy:disabled{opacity:.7; cursor:wait}
         <div class="cd-row"><span><b data-h>48</b>שעות</span><span><b data-m>00</b>דקות</span><span><b data-s>00</b>שניות</span></div>
       </div>
     </div>
-  </section>
-
-  <section class="card">
-    <h2>רגע, מי אני ולמה שתקשיבי לי?</h2>
-    <p>אני דנית, בת 42. לא רופאה ולא דיאטנית. אני זו שישבה מול דף בדיקות ״תקין״ והייתה מותשת כבר בבוקר.</p>
-    <p>הפריטין שלי היה <b>37</b>. בינינו, אף אחד לא עצר על המספר הזה. אמרו לי שהכל בסדר, ולא היה בסדר.</p>
-    <p>בסוף התברר שיש לי הליקובקטר, והמעי שלי לא ספג ברזל. <b>תוך 3 חודשים הפריטין שלי עלה מ-37 ל-75</b>, בלי תוספי ברזל.</p>
-    <h3 style="margin-top:18px">אז למה הכנתי את המדריך?</h3>
-    <p>כי למי יש כוח עכשיו לרוץ בין רופאים ולעשות מלא בדיקות דם? אני מקצרת לך את התהליך. במדריך יש בדיוק מה שהייתי רוצה שמישהי תגיד לי אז: איזו בדיקה לבקש, ומה המספר שלך אומר.</p>
   </section>
 
   <section class="plain">
@@ -296,6 +296,15 @@ button.buy:disabled{opacity:.7; cursor:wait}
     </div>
   </section>
 
+  <section class="card">
+    <h2>רגע, מי אני ולמה שתקשיבי לי?</h2>
+    <p>אני דנית, בת 42. לא רופאה ולא דיאטנית. אני זו שישבה מול דף בדיקות ״תקין״ והייתה מותשת כבר בבוקר.</p>
+    <p>הפריטין שלי היה <b>37</b>. בינינו, אף אחד לא עצר על המספר הזה. אמרו לי שהכל בסדר, ולא היה בסדר.</p>
+    <p>בסוף התברר שיש לי הליקובקטר, והמעי שלי לא ספג ברזל. <b>תוך 3 חודשים הפריטין שלי עלה מ-37 ל-75</b>, בלי תוספי ברזל.</p>
+    <h3 style="margin-top:18px">אז למה הכנתי את המדריך?</h3>
+    <p>כי למי יש כוח עכשיו לרוץ בין רופאים ולעשות מלא בדיקות דם? אני מקצרת לך את התהליך. במדריך יש בדיוק מה שהייתי רוצה שמישהי תגיד לי אז: איזו בדיקה לבקש, ומה המספר שלך אומר.</p>
+  </section>
+
   <section class="card" id="signup" style="scroll-margin-top:16px">
     <h2>לאן לשלוח לך את המדריך?</h2>
     <form id="form" novalidate>
@@ -314,14 +323,12 @@ button.buy:disabled{opacity:.7; cursor:wait}
             <p style="text-align:center">המדריך מוכן. שמרי אותו בטלפון כדי שיהיה איתך בבדיקה הבאה.<span id="sentTo" hidden></span></p>
       <div class="cta"><a class="buy" href="https://ig.danitbensimon.com/g/free-4qx9/ferritin-number.pdf" target="_blank" rel="noopener" data-dl>להורדת המדריך</a></div>
       <div class="up">
-        <p class="up-k">ובינתיים</p>
-        <p class="up-t">המדריך המלא לפריטין, עם תפריט שבועי ו-4 בונוסים</p>
-        <div class="price"><span class="now">79 ₪</span><span class="then">99 ₪</span></div>
-        <div class="cd" data-cd>
-          <p class="cd-t">79 ₪ ו-4 בונוסים בשווי 286 ₪ עד 20.10</p>
-          <div class="cd-row"><span><b data-d>0</b>ימים</span><span><b data-h>0</b>שעות</span><span><b data-m>0</b>דקות</span><span><b data-s>0</b>שניות</span></div>
-        </div>
-        <div class="cta" style="margin-top:16px"><a class="buy" href="https://ig.danitbensimon.com/guide.html?utm_source=free_guide&utm_medium=thankyou#price">למדריך המלא בהנחה</a></div>
+        <h3 class="up-h">אולי תתאהבי גם ב... ❤️👇</h3>
+        <a class="xl" href="https://ig.danitbensimon.com/guide.html?utm_source=free_thankyou#price"><span class="xi">📘</span><span><b>המדריך המלא לפריטין</b><small>תפריט שבועי ו-4 בונוסים. 79 ₪ במקום 99, עד 20.10.</small></span></a>
+        <a class="xl" href="https://ig.danitbensimon.com/sauerkraut/?utm_source=free_thankyou"><span class="xi">🫙</span><span><b>פרוביוטיקה בצנצנת</b><small>צנצנת התססה וקורס להכנת כרוב כבוש חי, בהנחה לחגים.</small></span></a>
+        <a class="xl" href="https://ig.danitbensimon.com/glow-factor/?utm_source=free_thankyou"><span class="xi">📖</span><span><b>Glow Factor, המגזין המודפס</b><small>חינם לעוקבות, עם דוגמיות מתנה. משלמת על המשלוח בלבד.</small></span></a>
+        <a class="xl" href="https://kglowskin.app/?utm_source=free_thankyou"><span class="xi">✨</span><span><b>שגרת עור קוריאנית לגיל 40+</b><small>השגרה הראשונה בחינם למייל, בוקר וערב.</small></span></a>
+        <a class="xl" href="https://iherb.co/UEqpSs6m"><span class="xi">🛒</span><span><b>רשימת קניות באייהרב</b><small>מוצרים לעור קורן ולבית נקי.</small></span></a>
       </div>
     </div>
   </section>
