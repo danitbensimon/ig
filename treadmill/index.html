@@ -210,6 +210,42 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
 .tag{display:inline-block; margin-inline-start:6px; padding:1px 10px; border-radius:999px; font-size:16px; font-weight:700; vertical-align:middle}.tag.free{background:#E7F3E3; color:#2F5A27}
 
 .me{float:left; width:96px; height:96px; border-radius:50%; object-fit:cover; object-position:50% 16%; border:4px solid #fff; box-shadow:var(--shadow); margin:0 14px 8px 0}
+/* free guide form */
+.qz-note{text-align:center; font-size:19px; font-weight:600; color:var(--wine); margin:0 0 16px}
+#form{display:flex; flex-direction:column; gap:14px}
+.field label{display:block; font-weight:700; font-size:18px; margin-bottom:6px}
+.field input:not([type=checkbox]){width:100%; font:inherit; font-size:19px; padding:13px 14px; border:2px solid var(--line); border-radius:12px; background:#fff; color:var(--ink)}
+.field input:focus{outline:none; border-color:#EC5F97}
+.ig-wrap{display:flex; align-items:center; gap:6px; direction:ltr; border:2px solid var(--line); border-radius:12px; background:#fff; padding-left:14px}
+.ig-wrap span{font-weight:700; color:var(--ink-2)}
+.ig-wrap input{border:0 !important; padding-left:0 !important}
+.field .err{display:none; margin:6px 0 0; font-size:17px; color:#C2185B; font-weight:600}
+.field.invalid .err{display:block}
+.field.invalid input{border-color:#C2185B}
+.chk-f{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.chk-f input{width:24px; height:24px; accent-color:#EC5F97}
+.chk-f label{margin:0}
+.chk-f .err{flex-basis:100%}
+.hp{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%)}
+button.buy{all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%; max-width:380px; margin:6px auto 0; text-align:center;
+  background:linear-gradient(90deg,#F48FB6,#EC5F97,#F7A6C6,#EC5F97,#F48FB6); background-size:300% 100%; animation:buyFlow 5s linear infinite; color:#fff;
+  font-family:'Heebo',sans-serif; font-weight:800; font-size:21px; padding:19px 18px; border-radius:999px; box-shadow:0 8px 22px rgba(236,95,151,.35)}
+button.buy:disabled{opacity:.7; cursor:wait}
+.ferr{display:none; color:#C2185B; font-weight:700; text-align:center; margin:0}
+.up{margin-top:22px; padding-top:20px; border-top:1px solid var(--line); text-align:center}
+.up-k{margin:0; font-weight:700; color:var(--ink-2)}
+.up-t{margin:4px 0 8px; font-family:'Heebo',sans-serif; font-weight:800; font-size:23px; color:var(--wine)}
+.ended .up{display:none}
+.sub2{font-size:20px; color:var(--ink); max-width:32ch; margin:0}
+.closed-box{display:none}
+.free-ended .closed-box{display:block}
+.free-ended #quiz, .free-ended .hero .cta, .free-ended .fcd{display:none}
+.qz-tip{margin-top:16px; background:#fff; border:2px solid #EC5F97; border-radius:14px; padding:16px; font-size:19px; line-height:1.55; animation:qzIn .35s ease}
+.qz-tip b{color:var(--wine); font-family:'Heebo',sans-serif}
+.qz-next{all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%; margin-top:12px; text-align:center; background:var(--wine); color:#fff; font-family:'Heebo',sans-serif; font-weight:800; font-size:19px; padding:13px; border-radius:999px}
+.qz-next:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+
+#form[hidden],#done[hidden]{display:none !important}
 </style>
 </head>
 <body>
@@ -221,10 +257,7 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
     <p class="sub">הליכון מתקפל עם רטט, שנכנס לפינה קטנה בבית ומחכה לך כשיש לך כמה דקות.</p>
     <div class="prodwrap"><img class="prod" src="product.webp" alt="הליכון RUNVO FLEX VIBE"><span class="vibe">〰️ עם רטט!</span></div>
     <div class="cta">
-      <a class="buy" href="https://runvofit.com/product/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C-runvo-flex-vibe/?utm_source=danitbensimon&utm_medium=landing" data-buy="hero">להליכון בהנחה לעוקבות</a>
-      <div class="coupon"><p class="cp-k"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="iggT" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#iggT)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>קוד הנחה לעוקבות בלבד</span></p>
-        <button class="cp" type="button" data-code="runvo311"><b dir="ltr">runvo311</b><span class="cp-l">להעתקה</span></button>
-        <p class="cp-f">מדביקים את הקוד בעמוד התשלום</p></div>
+      <a class="buy" href="#signup" data-cta="hero">לקבלת קוד ההנחה לעוקבות</a>
       <p class="fine">RUNVO FLEX VIBE · אחריות היבואן הרשמי</p>
     </div>
   </section>
@@ -274,9 +307,31 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
     </div>
     <div class="qz-q" data-q="res">
       <h3>ההליכון הזה מתאים לך 🙌</h3>
-      <p class="qz-note">עד 12 קמ״ש, שיפוע, רטט, והוא מתקפל כשסיימת. בתשלום מדביקים את הקוד runvo311.</p>
-      <div class="cta"><a class="buy" href="https://runvofit.com/product/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C-runvo-flex-vibe/?utm_source=danitbensimon&utm_medium=landing" data-buy="quiz">להליכון בהנחה לעוקבות</a></div>
+      <p class="qz-note">עד 12 קמ״ש, שיפוע, רטט, והוא מתקפל כשסיימת. את קוד ההנחה מקבלים כאן למטה.</p>
+      <div class="cta"><a class="buy" href="#signup" data-cta="quiz">לקבלת קוד ההנחה לעוקבות</a></div>
       <button class="qz-again" id="qzAgain">לענות שוב</button>
+    </div>
+  </section>
+
+  <section class="card" id="signup" style="scroll-margin-top:16px">
+    <h2>קוד ההנחה לעוקבות 🎁</h2>
+    <p class="qz-note" id="suNote">השאירי פרטים, והקוד יופיע כאן מיד.</p>
+    <form id="form" novalidate>
+      <div class="field"><label for="name">שם</label><input id="name" name="name" autocomplete="given-name" required><p class="err">רק שם, כדי שאדע איך לפנות אלייך</p></div>
+      <div class="field"><label for="email">אימייל</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="you@gmail.com" required><p class="err">צריך כתובת מייל תקינה</p></div>
+      <div class="field"><label for="ig">שם המשתמש שלך באינסטגרם</label><div class="ig-wrap"><span aria-hidden="true">@</span><input id="ig" name="ig" autocapitalize="off" autocorrect="off" spellcheck="false" dir="ltr" placeholder="your.username" required></div><p class="err">צריך שם משתמש, בלי רווחים</p></div>
+      <div class="hp" aria-hidden="true"><label for="company">חברה</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+      <div class="field chk-f"><input type="checkbox" id="follows" required><label for="follows">אני עוקבת אחרייך באינסטגרם</label>
+        <p class="err">הקוד לעוקבות בלבד. <a href="https://instagram.com/danitbensimon" target="_blank" rel="noopener">לעקוב ב-@danitbensimon</a> ואז לסמן כאן.</p></div>
+      <button class="buy sendbtn" id="submit" type="submit">לקבלת הקוד</button>
+      <p class="fine">בשליחה את מאשרת לקבל ממני מיילים עם טיפים והצעות. אפשר להסיר בכל רגע.</p>
+      <p class="ferr" id="formError">משהו השתבש בשליחה. נסי שוב בעוד רגע.</p>
+    </form>
+    <div id="done" hidden>
+      <div class="coupon"><p class="cp-k"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="iggT" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#iggT)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>קוד הנחה לעוקבות בלבד</span></p>
+        <button class="cp" type="button" data-code="runvo311"><b dir="ltr">runvo311</b><span class="cp-l">להעתקה</span></button>
+        <p class="cp-f">מדביקים את הקוד בעמוד התשלום</p></div>
+      <div class="cta" style="margin-top:14px"><a class="buy" href="https://runvofit.com/product/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C-runvo-flex-vibe/?utm_source=danitbensimon&utm_medium=landing" data-buy="after_signup">להליכון בהנחה</a></div>
     </div>
   </section>
 
@@ -300,10 +355,7 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
   <section class="plain" style="text-align:center">
     <h2>חזר למלאי</h2>
     <p>ועכשיו בהנחה לעוקבות</p>
-    <div class="coupon"><p class="cp-k"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="iggT2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#iggT2)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>קוד הנחה לעוקבות בלבד</span></p>
-        <button class="cp" type="button" data-code="runvo311"><b dir="ltr">runvo311</b><span class="cp-l">להעתקה</span></button>
-        <p class="cp-f">מדביקים את הקוד בעמוד התשלום</p></div>
-    <div class="cta" style="margin-top:14px"><a class="buy" href="https://runvofit.com/product/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%9F-%D7%9E%D7%AA%D7%A7%D7%A4%D7%9C-runvo-flex-vibe/?utm_source=danitbensimon&utm_medium=landing" data-buy="bottom">להליכון בהנחה לעוקבות</a></div>
+    <div class="cta" style="margin-top:14px"><a class="buy" href="#signup" data-cta="bottom">לקבלת קוד ההנחה לעוקבות</a></div>
   </section>
 
   <footer>
@@ -341,5 +393,32 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
 })});
 </script>
 
+<script>
+(function(){
+  var HS_PORTAL='147616801', HS_FORM='35cf4fe8-28af-4684-8372-04b27deb7216', HOSTS=['https://api-eu1.hsforms.com','https://api.hsforms.com'];
+  var form=document.getElementById('form'), btn=document.getElementById('submit'), ferr=document.getElementById('formError');
+  var rules={name:function(v){return v.trim().length>=2},email:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())},
+             ig:function(v){return /^@?[A-Za-z0-9._]{1,30}$/.test(v.trim())},follows:function(){return document.getElementById('follows').checked}};
+  function check(id){var el=document.getElementById(id), ok=rules[id](el.value||''); el.closest('.field').classList.toggle('invalid',!ok); return ok;}
+  document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener('click',function(){ if(window.gtag) gtag('event','cta_click',{page:'treadmill',placement:a.dataset.cta}); });});
+  var qs=new URLSearchParams(location.search);
+  function reveal(){form.hidden=true; document.getElementById('done').hidden=false; document.getElementById('suNote').textContent='הנה הקוד שלך 💌'; }
+  form.addEventListener('submit',async function(e){
+    e.preventDefault(); ferr.style.display='none';
+    var bad=Object.keys(rules).filter(function(id){return !check(id)}); if(bad.length){document.getElementById(bad[0]).focus();return;}
+    if(form.company.value){reveal();return;}
+    btn.disabled=true; btn.textContent='שולחת…';
+    var hutk=(document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)||[])[1];
+    var fields=[['firstname',form.name.value.trim()],['email',form.email.value.trim().toLowerCase()],['instagram_username',form.ig.value.trim().replace(/^@/,'').toLowerCase()],
+      ['follows_on_instagram','true'],['treadmill_lead','true'],['lead_channel','treadmill page'],['free_guide_name','קוד הנחה להליכון'],['free_guide_utm_source',qs.get('utm_source')||'']]
+      .filter(function(f){return f[1]!==''}).map(function(f){return {objectTypeId:'0-1',name:f[0],value:f[1]}});
+    var ok=false;
+    for(var i=0;i<HOSTS.length&&!ok;i++){try{var r=await fetch(HOSTS[i]+'/submissions/v3/integration/submit/'+HS_PORTAL+'/'+HS_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:Object.assign({pageUri:location.href,pageName:document.title},hutk?{hutk:hutk}:{})})}); ok=r.ok;}catch(_){}}
+    if(!ok){ferr.style.display='block'; btn.disabled=false; btn.textContent='לקבלת הקוד'; return;}
+    if(window.gtag) gtag('event','generate_lead',{form:'treadmill'});
+    reveal(); document.getElementById('signup').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+})();
+</script>
 </body>
 </html>
