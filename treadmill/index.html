@@ -329,24 +329,6 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
   if(navigator.clipboard){navigator.clipboard.writeText(c).then(done,done)} else {var i=document.createElement('input'); i.value=c; document.body.appendChild(i); i.select(); try{document.execCommand('copy')}catch(_){}; i.remove(); done();}
 })});
 </script>
-<div class="lm" id="lm" hidden role="dialog" aria-modal="true" aria-labelledby="lmT"><div class="lm-c">
-  <button class="lm-x" type="button" aria-label="סגירה" data-lmclose>×</button>
-  <p class="lm-k">ההליכון נפתח בלשונית חדשה 🙌</p>
-  <h2 id="lmT">אולי תתאהבי גם ב... ❤️👇</h2>
-    <a class="xl" href="https://ig.danitbensimon.com/?utm_source=treadmill_thankyou"><span class="xi">🩸</span><span><b>שליף הפריטין למתחילות <span class="tag free">חינם</span></b><small>מה המספר שלך אומר, ואיזו בדיקה לבקש.</small></span></a>
-    <a class="xl" href="https://ig.danitbensimon.com/anti-inflammatory/?utm_source=treadmill_thankyou"><span class="xi">🥗</span><span><b>המדריך לתזונה אנטי־דלקתית <span class="tag free">חינם</span></b><small>מה להוריד מהצלחת, ואיך מכינים כרוב כבוש בבית.</small></span></a>
-    <a class="xl" href="https://ig.danitbensimon.com/sauerkraut/?utm_source=treadmill_thankyou"><span class="xi">🫙</span><span><b>פרוביוטיקה בצנצנת</b><small>צנצנת התססה וקורס להכנת כרוב כבוש חי.</small></span></a>
-    <a class="xl" href="https://ig.danitbensimon.com/guide.html?utm_source=treadmill_thankyou"><span class="xi">📘</span><span><b>המדריך המלא לפריטין</b><small>תפריט שבועי ו-3 מדריכי בונוס.</small></span></a>
-    <a class="xl" href="https://kglowskin.app/?utm_source=treadmill_thankyou"><span class="xi">✨</span><span><b>שגרת עור קוריאנית לגיל 40+ <span class="tag free">חינם</span></b><small>השגרה הראשונה בחינם למייל, בוקר וערב.</small></span></a>
-    <a class="xl" href="https://iherb.co/UEqpSs6m"><span class="xi">🛒</span><span><b>רשימת קניות באייהרב</b><small>מוצרים לעור קורן ולבית נקי.</small></span></a>
-</div></div>
-<script>
-(function(){
-  var lm=document.getElementById('lm');
-  document.querySelectorAll('a[data-buy]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; a.addEventListener('click',function(){ setTimeout(function(){ lm.hidden=false; if(window.gtag) gtag('event','thankyou_list_shown',{page:'treadmill'}); },400); }); });
-  lm.addEventListener('click',function(e){ if(e.target===lm||e.target.hasAttribute('data-lmclose')) lm.hidden=true; });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lm.hidden=true; });
-})();
-</script>
+
 </body>
 </html>
