@@ -184,8 +184,9 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
 
 .prodwrap{position:relative; width:100%; max-width:420px}
 .vibe{position:absolute; top:14px; left:10px; transform:rotate(-8deg); background:linear-gradient(90deg,#F48FB6,#EC5F97,#F7A6C6); color:#fff; font-family:'Heebo',sans-serif; font-weight:900; font-size:22px; padding:10px 18px; border-radius:999px;
-  box-shadow:0 0 0 0 rgba(236,95,151,.6),0 8px 22px rgba(236,95,151,.45); animation:vFloat 3s ease-in-out infinite, vGlow 2s ease-in-out infinite}
-@keyframes vFloat{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-8px)}}
+  box-shadow:0 0 0 0 rgba(236,95,151,.6),0 8px 22px rgba(236,95,151,.45); animation:vBuzz 1.6s linear infinite, vGlow 2s ease-in-out infinite}
+@keyframes vBuzz{0%,40%,100%{transform:rotate(-8deg) translate(0,0)}
+ 44%{transform:rotate(-6deg) translate(-3px,1px)}48%{transform:rotate(-10deg) translate(3px,-1px)}52%{transform:rotate(-6deg) translate(-3px,1px)}56%{transform:rotate(-10deg) translate(3px,-1px)}60%{transform:rotate(-7deg) translate(-2px,0)}64%{transform:rotate(-9deg) translate(2px,0)}68%{transform:rotate(-8deg) translate(0,0)}}
 @keyframes vGlow{0%,100%{box-shadow:0 0 12px 2px rgba(236,95,151,.55),0 8px 22px rgba(236,95,151,.4)}50%{box-shadow:0 0 28px 10px rgba(247,166,198,.9),0 8px 22px rgba(236,95,151,.4)}}
 @media (prefers-reduced-motion:reduce){.vibe{animation:none}}
 </style>
