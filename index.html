@@ -257,14 +257,9 @@ button.buy:disabled{opacity:.7; cursor:wait}
   </section>
 
   <section class="plain">
-    <h2>המחקר הכי מעודכן בנושא</h2>
-    <p>ב-16.9.2026 איגוד ההמטולוגיה האמריקאי (ASH) פרסם לראשונה הנחיות מבוססות מחקר לאבחון חוסר ברזל. בקיצור:</p>
-    <ul>
-      <li class="tick"><b>פריטין 30 ומטה הוא חוסר ברזל,</b> גם בלי אנמיה. עד עכשיו הגבול המקובל אצל מבוגרים היה 15.</li>
-      <li class="tick"><b>בווסת כבדה, חוסר ברזל מוגדר עד 50.</b></li>
-      <li class="tick"><b>כשיש דלקת,</b> חוסר ברזל מוגדר עד 100.</li>
-    </ul>
-    <p style="margin-top:14px">אז אם הפריטין שלך 30 ומטה ואמרו לך שהוא תקין, שווה לחזור לרופא עם ההנחיות האלה. השליף כבר מעודכן לפיהן.</p>
+    <h2>המחקר הכי מעודכן בנושא 🔬</h2>
+    <p>בספטמבר 2026 איגוד ההמטולוגיה האמריקאי קבע שפריטין 30 ומטה הוא חוסר ברזל, גם בלי אנמיה. עד עכשיו הגבול היה 15, ובווסת כבדה הוא עכשיו 50.</p>
+    <p>אז אם אמרו לך שהפריטין שלך תקין, שווה לבדוק אותו שוב לפי ההנחיות החדשות. השליף כבר מעודכן לפיהן.</p>
     <p class="fine" style="text-align:right">מקור: <a href="https://ashpublications.org/bloodadvances/article/doi/10.1182/bloodadvances.2025015950/570502/American-Society-of-Hematology-2026-guidelines-for" target="_blank" rel="noopener" dir="ltr">American Society of Hematology 2026 guidelines for diagnosis of iron deficiency, Blood Advances</a></p>
   </section>
 
@@ -273,24 +268,24 @@ button.buy:disabled{opacity:.7; cursor:wait}
         <div class="qz-count" id="qzCount">שאלה 1 מתוך 2</div>
     <div class="qz-bar"><i id="qzBar"></i></div>
 
-    <div class="qz-q on" data-q="fer">
-      <h3>מה היה הפריטין בבדיקה האחרונה?</h3>
-      <div class="qz-grid">
-        <button class="qz-opt" data-v="low"><span class="qz-num"><bdi dir="ltr">&lt;30</bdi></span><b>מתחת ל-30</b></button>
-        <button class="qz-opt" data-v="mid"><span class="qz-num"><bdi dir="ltr">30-50</bdi></span><b>30 עד 50</b></button>
-        <button class="qz-opt" data-v="high"><span class="qz-num"><bdi dir="ltr">50+</bdi></span><b>מעל 50</b></button>
-        <button class="qz-opt" data-v="none"><span class="qz-num">?</span><b>לא בדקתי</b></button>
-      </div>
-      <div class="qz-tip" hidden></div>
-    </div>
-
-    <div class="qz-q" data-q="sym">
+    <div class="qz-q on" data-q="sym">
       <h3>מה הכי מפריע לך ביום־יום?</h3>
       <div class="qz-grid">
         <button class="qz-opt" data-v="tired"><img src="quiz/q1-tired.webp" alt="" loading="lazy"><b>עייפות מהבוקר</b></button>
         <button class="qz-opt" data-v="hair"><img src="quiz/q1-hair.webp" alt="" loading="lazy"><b>נשירת שיער</b></button>
         <button class="qz-opt" data-v="legs"><img src="quiz/q1-legs.webp" alt="" loading="lazy"><b>רגליים שלא נרגעות בלילה</b></button>
         <button class="qz-opt" data-v="focus"><img src="quiz/q1-focus.webp" alt="" loading="lazy"><b>קשה לי להתרכז</b></button>
+      </div>
+      <div class="qz-tip" hidden></div>
+    </div>
+
+    <div class="qz-q" data-q="fer">
+      <h3>מה היה הפריטין בבדיקה האחרונה?</h3>
+      <div class="qz-grid">
+        <button class="qz-opt" data-v="low"><span class="qz-num"><bdi dir="ltr">&lt;30</bdi></span><b>מתחת ל-30</b></button>
+        <button class="qz-opt" data-v="mid"><span class="qz-num"><bdi dir="ltr">30-50</bdi></span><b>30 עד 50</b></button>
+        <button class="qz-opt" data-v="high"><span class="qz-num"><bdi dir="ltr">50+</bdi></span><b>מעל 50</b></button>
+        <button class="qz-opt" data-v="none"><span class="qz-num">?</span><b>לא בדקתי</b></button>
       </div>
       <div class="qz-tip" hidden></div>
     </div>
@@ -374,11 +369,11 @@ button.buy:disabled{opacity:.7; cursor:wait}
             none:'בשליף תמצאי בדיוק מה לבקש מהרופא.'};
   function show(k){
     steps.forEach(function(s){s.classList.toggle('on',s.dataset.q===k)});
-    var n={fer:1,sym:2}[k];
+    var n={sym:1,fer:2}[k];
     document.getElementById('qzCount').textContent = n ? 'שאלה '+n+' מתוך 2' : 'סיימת';
-    document.getElementById('qzBar').style.width = ({fer:33,sym:66,form:90,done:100})[k]+'%';
+    document.getElementById('qzBar').style.width = ({sym:33,fer:66,form:90,done:100})[k]+'%';
   }
-  show('fer');
+  show('sym');
   qz.addEventListener('click',function(e){
     var o=e.target.closest('.qz-opt'); if(!o) return;
     var q=o.closest('.qz-q'), key=q.dataset.q;
@@ -386,13 +381,13 @@ button.buy:disabled{opacity:.7; cursor:wait}
     a[key]=o.dataset.v;
     if(window.gtag) gtag('event','quiz_answer',{quiz:'free_guide',question:key,answer:a[key]});
     var tip=q.querySelector('.qz-tip');
-    tip.innerHTML='<b>ידעת?</b> '+TIP[key][a[key]]+'<button class="qz-next" type="button">'+(key==='fer'?'לשאלה הבאה ←':'לקבל את השליף ←')+'</button>';
+    tip.innerHTML='<b>ידעת?</b> '+TIP[key][a[key]]+'<button class="qz-next" type="button">'+(key==='sym'?'לשאלה הבאה ←':'לקבל את השליף ←')+'</button>';
     tip.hidden=false; tip.scrollIntoView({behavior:'smooth',block:'nearest'});
   });
   qz.addEventListener('click',function(e){
     var n=e.target.closest('.qz-next'); if(!n) return;
     var key=n.closest('.qz-q').dataset.q;
-    if(key==='fer') show('sym');
+    if(key==='sym') show('fer');
     else { document.getElementById('qzNote').textContent='בשליף מחכות לך רשימת 7 הבדיקות, מה זה אומר שאת ב״טווח התקין״, והשאלה לשאול את הרופא.'; show('form'); }
     qz.scrollIntoView({behavior:'smooth',block:'start'});
   });
