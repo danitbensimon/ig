@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{color-scheme:light; scroll-behavior:smooth}body{margin:0}img{max-width:100%}.bonuses{margin-top:26px; padding-top:20px; border-top:1px solid var(--line)}
+.bn-h{font-family:'Heebo',sans-serif; font-size:23px; font-weight:800; color:var(--wine); margin:0 0 14px}
+.bn{display:flex; gap:14px; align-items:flex-start; justify-content:space-between; background:linear-gradient(140deg,var(--card-a),var(--card-b)); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:10px}
+.bn b{display:block; font-size:19px; line-height:1.35; color:var(--ink)}
+.bn span{display:block; font-size:17px; color:var(--ink-2); line-height:1.45; margin-top:3px}
+.bn s{flex:none; font-family:'Heebo',sans-serif; font-weight:800; font-size:20px; color:var(--ink-2); text-decoration-color:#E0407F; text-decoration-thickness:3px; white-space:nowrap}
+.bn-total{margin:14px 0 0; font-size:19px; text-align:center; color:var(--ink)}
+.bn-total s{text-decoration-color:#E0407F; text-decoration-thickness:3px; font-weight:800}
+.cd{margin:18px auto 0; max-width:380px; background:#fff; border:2px solid #F48FB6; border-radius:16px; padding:12px 14px 14px; text-align:center}
+.cd-t{margin:0 0 8px; font-weight:700; font-size:18px; color:var(--wine)}
+.cd-row{display:flex; justify-content:center; gap:10px}
+.cd-row span{display:flex; flex-direction:column; align-items:center; min-width:62px; font-size:16px; color:var(--ink-2)}
+.cd-row b{font-family:'Heebo',sans-serif; font-weight:800; font-size:30px; line-height:1.1; color:var(--ink)}
+.cd-price{margin:0 auto 20px}
+.bn-note{margin:-6px 0 12px; font-size:18px; font-weight:700; color:#C2185B}
+.ended .cd{display:none}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9G287R7LSE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9G287R7LSE');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a'); if(!a) return;
+    var nameEl = a.querySelector('.t-name'); 
+    var label = nameEl ? nameEl.textContent.trim() : (a.textContent || '').trim().slice(0,60);
+    var href = a.getAttribute('href') || '';
+    if(href.indexOf('pay.sumit.co.il') > -1){
+      gtag('event','begin_checkout',{item_name:label, link_url:href});
+    } else {
+      gtag('event','link_click',{link_text:label, link_url:href});
+    }
+  }, true);
+</script>
+<title>המדריכים שלך | דנית בן סימון</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="הבדיקות תקינות ואת עדיין עייפה? המדריך המלא לפריטין ולתזונה אנטי־דלקתית של דנית בן סימון. הנחה לחגים, 79 ₪ במקום 99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+:root{
+  direction:rtl; color-scheme:light;
+  --wine:#8C1D2F; --wine-d:#5E1220; --ground:#FCF6F4;
+  --card-a:#FDF1F1; --card-b:#F6D9DD;
+  --ink:#2A1F20; --ink-2:#4A3A3E; --line:#EBD2D6; --gold:#A9743F; --sage:#4E6B45;
+  --shadow:0 1px 2px rgba(120,50,60,.06), 0 10px 26px rgba(120,50,60,.10);
+}
+*{box-sizing:border-box}
+body{direction:rtl; margin:0; background:var(--ground); color:var(--ink);
+  font-family:'Assistant',system-ui,sans-serif; padding-block:36px 56px; padding-inline:20px;
+  -webkit-font-smoothing:antialiased; font-size:19px; line-height:1.55}
+.wrap{max-width:620px; margin-inline:auto; display:flex; flex-direction:column; gap:40px}
+h1,h2,h3{font-family:'Heebo',system-ui,sans-serif; margin:0; text-wrap:balance}
+h1{font-size:clamp(31px,8vw,44px); font-weight:900; line-height:1.15; letter-spacing:-.02em}
+h2{font-size:clamp(25px,6vw,31px); font-weight:800; line-height:1.2; color:var(--wine); margin-bottom:16px}
+h3{font-size:21px; font-weight:800; margin-bottom:6px}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+.muted{color:var(--ink-2)}
+
+/* hero */
+.hero{display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px}
+.kick{display:inline-block; background:var(--wine); color:#fff; font-weight:700; font-size:16px;
+  padding:7px 16px; border-radius:999px; letter-spacing:.02em}
+.hero p.sub{font-size:23px; font-weight:600; color:var(--ink); max-width:30ch; margin:0}
+.avatar{width:96px; height:96px; border-radius:50%; object-fit:cover; object-position:50% 16%;
+  border:4px solid #fff; box-shadow:var(--shadow); max-width:100%}
+.byline{font-size:17px; color:var(--ink-2); font-weight:600}
+
+/* cta */
+.cta{display:flex; flex-direction:column; align-items:center; gap:10px; width:100%}
+a.buy{display:block; width:100%; max-width:380px; text-align:center; background:linear-gradient(90deg,#F48FB6,#EC5F97,#F7A6C6,#EC5F97,#F48FB6); background-size:300% 100%; animation:buyFlow 5s linear infinite; color:#fff; text-shadow:0 1px 2px rgba(150,20,70,.35);
+  text-decoration:none; font-family:'Heebo',sans-serif; font-weight:800; font-size:21px; white-space:nowrap;
+  padding:19px 18px; border-radius:999px; box-shadow:0 8px 22px rgba(236,95,151,.35);
+  transition:transform .15s ease}
+a.buy:hover{transform:translateY(-2px)}
+@keyframes buyFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
+@media (prefers-reduced-motion:reduce){a.buy{animation:none}}
+a.buy:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+.fine{font-size:16px; color:var(--ink-2); margin:0; text-align:center}
+
+/* blocks */
+.card{background:linear-gradient(140deg,var(--card-a) 0%,var(--card-b) 100%);
+  border:1px solid var(--line); border-radius:20px; padding:28px 24px; box-shadow:var(--shadow)}
+.plain{background:#fff; border:1px solid var(--line); border-radius:20px; padding:28px 24px}
+ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px}
+li{position:relative; padding-right:30px}
+li::before{content:"•"; position:absolute; right:0; top:0; color:var(--wine); font-weight:800}
+li.tick::before{content:"✓"; color:var(--sage); font-size:21px; top:-2px}
+li b{font-weight:700}
+
+.quote{border-right:5px solid var(--wine); background:#fff; border-radius:0 16px 16px 0;
+  padding:22px 22px 22px 20px}
+.quote .big{font-family:'Heebo',sans-serif; font-size:27px; font-weight:800; color:var(--wine); line-height:1.25; margin-bottom:10px}
+
+.price{display:flex; align-items:baseline; justify-content:center; gap:12px; flex-wrap:wrap}
+.price .now{font-family:'Heebo',sans-serif; font-size:52px; font-weight:900; color:var(--wine); line-height:1}
+.price .then{font-family:'Heebo',sans-serif; font-size:40px; font-weight:800; color:var(--ink-2); text-decoration:line-through; text-decoration-thickness:4px; text-decoration-color:#E0407F}
+
+ol.toc{list-style:none; counter-reset:c; margin:0; padding:0; display:flex; flex-direction:column; gap:14px}
+ol.toc li{counter-increment:c; position:relative; padding-right:38px; font-size:18px}
+ol.toc li::before{content:counter(c); position:absolute; right:0; top:0;
+  font-family:'Heebo',sans-serif; font-weight:800; font-size:17px; color:#fff;
+  background:var(--wine); width:26px; height:26px; border-radius:50%; display:grid; place-items:center}
+.bonus{margin-top:22px; padding-top:18px; border-top:1px solid var(--line); font-size:18px; color:var(--ink-2)}
+details{border-top:1px solid var(--line); padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{font-family:'Heebo',sans-serif; font-weight:700; font-size:19px; cursor:pointer; list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+"; float:left; color:var(--wine); font-weight:800}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0; color:var(--ink-2); font-size:18px}
+
+footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
+/* quiz */
+.qz-sub{font-size:19px; color:var(--ink); margin:0 0 16px; text-align:center}
+.qz h2{text-align:center}
+.qz-count{font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; color:var(--wine); text-align:center}
+.qz-bar{height:6px; background:var(--line); border-radius:99px; margin:10px auto 20px; max-width:260px; overflow:hidden}
+.qz-bar i{display:block; height:100%; width:25%; background:linear-gradient(90deg,#F48FB6,#EC5F97); border-radius:99px; transition:width .35s ease}
+.qz-q{display:none}
+.qz-q.on{display:block; animation:qzIn .35s ease}
+@keyframes qzIn{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+.qz-q h3{font-size:24px; text-align:center; margin-bottom:16px; color:var(--ink)}
+.qz-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.qz-opt{all:unset; box-sizing:border-box; cursor:pointer; background:#fff; border:2px solid var(--line); border-radius:16px; overflow:hidden;
+  display:flex; flex-direction:column; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease}
+.qz-opt:hover{transform:translateY(-3px); border-color:#EC5F97; box-shadow:0 8px 20px rgba(236,95,151,.22)}
+.qz-opt:focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+.qz-opt.pick{border-color:#EC5F97; box-shadow:0 0 0 3px rgba(236,95,151,.35)}
+.qz-opt img{width:100%; aspect-ratio:4/3; object-fit:cover; display:block}
+.qz-opt b{font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; line-height:1.3; padding:12px 10px; text-align:center; color:var(--ink)}
+.qz-num{aspect-ratio:4/3; display:grid; place-items:center; background:linear-gradient(140deg,var(--card-a),var(--card-b));
+  font-family:'Heebo',sans-serif; font-weight:900; font-size:36px; color:var(--wine)}
+.qz-res ul{margin:4px 0 22px}
+.qz-res li{font-size:19px}
+.qz-again{all:unset; cursor:pointer; display:block; margin:14px auto 0; font-size:18px; font-weight:600; color:var(--wine); text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.qz-q.on{animation:none}.qz-opt{transition:none}}
+</style>
+<style>
+.dl{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.dl .xi{font-size:32px}.dl b{display:block;font-family:'Heebo',sans-serif;font-size:21px}.dl small{display:block;font-size:17px;color:var(--ink-2)}
+.hero h1{color:var(--wine)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <span class="kick">חינם לעוקבות</span>
+    <h1>המדריכים שלך 💌</h1>
+    <p class="sub">לחצי כדי להוריד. שמרי אותם בטלפון, כדי שיהיו איתך בבדיקה הבאה.</p>
+  </section>
+  <section style="display:flex;flex-direction:column;gap:12px">
+    <a class="dl" href="https://ig.danitbensimon.com/g/free-4qx9/ferritin-number.pdf" target="_blank" rel="noopener"><span class="xi">🩸</span><span><b>שליף הפריטין למתחילות</b><small>מה המספר שלך אומר, ואיזו בדיקה לבקש מהרופא.</small></span></a>
+    <a class="dl" href="https://ig.danitbensimon.com/g/6wyde50x/bonus-anti-inflammatory.pdf" target="_blank" rel="noopener"><span class="xi">🥗</span><span><b>המדריך לתזונה אנטי־דלקתית</b><small>מה להוריד מהצלחת, ואיך מכינים כרוב כבוש בבית.</small></span></a>
+  </section>
+  <section class="card" style="text-align:center">
+    <h2>המדריך המלא לפריטין</h2>
+    <p>התפריט השבועי שעזר לי לעלות מ-37 כמעט ל-70, עם עוד 3 מדריכי בונוס.</p>
+    <div class="cta"><a class="buy" href="https://ig.danitbensimon.com/guide.html?utm_source=email_downloads">למדריך המלא</a></div>
+  </section>
+  <footer><a href="https://ig.danitbensimon.com/">ig.danitbensimon.com</a> · <a href="https://instagram.com/danitbensimon">‎@danitbensimon</a></footer>
+</div>
+</body>
+</html>

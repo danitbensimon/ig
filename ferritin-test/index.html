@@ -412,7 +412,7 @@ button.buy:disabled{opacity:.7; cursor:wait}
     var hutk=(document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)||[])[1];
     var fields=[['firstname',form.name.value.trim()],['email',email],
       ['instagram_username',form.ig.value.trim().replace(/^@/,'').toLowerCase()],
-      ['follows_on_instagram','true'],['ferritin_free_guide','true'],
+      ['follows_on_instagram','true'],['ferritin_free_guide','true'],['free_guide_name','שליף הפריטין למתחילות'],['free_guide_url','https://ig.danitbensimon.com/g/free-4qx9/ferritin-number.pdf'],
       ['ferritin_level_answer',a.fer||''],['ferritin_symptom_answer',a.sym||''],
       ['free_guide_utm_source',qs.get('utm_source')||'']]
       .filter(function(f){return f[1]!==''}).map(function(f){return {objectTypeId:'0-1',name:f[0],value:f[1]}});
