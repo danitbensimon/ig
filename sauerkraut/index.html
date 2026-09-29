@@ -205,6 +205,16 @@ table.cmp{width:100%; border-collapse:collapse; font-size:17px}
 
 .cd-row{direction:ltr}
 .hero h1{color:var(--wine)}
+
+.lm{position:fixed; inset:0; z-index:90; background:rgba(42,31,32,.55); display:grid; place-items:center; padding:16px}
+.lm[hidden]{display:none}
+.lm-c{position:relative; width:min(460px,100%); max-height:90vh; overflow:auto; background:var(--ground); border-radius:20px; padding:24px 16px 16px}
+.lm-x{all:unset; cursor:pointer; position:absolute; top:8px; left:12px; font-size:30px; line-height:1; color:var(--ink-2)}
+.lm-k{margin:0; text-align:center; font-weight:700; font-size:18px; color:var(--sage)}
+.lm h2{text-align:center; margin:4px 0 14px}
+.xl{display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; box-shadow:var(--shadow)}
+.xl .xi{font-size:28px; flex:none}.xl b{display:block; font-size:19px; line-height:1.3}.xl small{display:block; font-size:17px; color:var(--ink-2); line-height:1.45; margin-top:2px}
+.tag{display:inline-block; margin-inline-start:6px; padding:1px 10px; border-radius:999px; font-size:16px; font-weight:700; vertical-align:middle}.tag.free{background:#E7F3E3; color:#2F5A27}
 </style>
 </head>
 <body>
@@ -374,6 +384,25 @@ table.cmp{width:100%; border-collapse:collapse; font-size:17px}
     },260);
   });
   document.getElementById('qzAgain').addEventListener('click',function(){a={}; qz.querySelectorAll('.pick').forEach(function(b){b.classList.remove('pick')}); show('exp');});
+})();
+</script>
+<div class="lm" id="lm" hidden role="dialog" aria-modal="true" aria-labelledby="lmT"><div class="lm-c">
+  <button class="lm-x" type="button" aria-label="סגירה" data-lmclose>×</button>
+  <p class="lm-k">הצנצנת נפתחה בלשונית חדשה 🙌</p>
+  <h2 id="lmT">אולי תתאהבי גם ב... ❤️👇</h2>
+    <a class="xl" href="https://ig.danitbensimon.com/anti-inflammatory/?utm_source=sauerkraut_thankyou"><span class="xi">🥗</span><span><b>המדריך לתזונה אנטי־דלקתית <span class="tag free">חינם</span></b><small>מה להוריד מהצלחת, ואיך מכינים כרוב כבוש בבית.</small></span></a>
+    <a class="xl" href="https://ig.danitbensimon.com/?utm_source=sauerkraut_thankyou"><span class="xi">🩸</span><span><b>שליף הפריטין למתחילות <span class="tag free">חינם</span></b><small>מה המספר שלך אומר, ואיזו בדיקה לבקש.</small></span></a>
+    <a class="xl" href="https://ig.danitbensimon.com/treadmill/?utm_source=sauerkraut_thankyou"><span class="xi">🚶‍♀️</span><span><b>הליכון רטט מתקפל</b><small>חזר למלאי, ועכשיו בהנחה לעוקבות.</small></span></a>
+    <a class="xl" href="https://ig.danitbensimon.com/guide.html?utm_source=sauerkraut_thankyou"><span class="xi">📘</span><span><b>המדריך המלא לפריטין</b><small>תפריט שבועי ו-3 מדריכי בונוס.</small></span></a>
+    <a class="xl" href="https://kglowskin.app/?utm_source=sauerkraut_thankyou"><span class="xi">✨</span><span><b>שגרת עור קוריאנית לגיל 40+ <span class="tag free">חינם</span></b><small>השגרה הראשונה בחינם למייל, בוקר וערב.</small></span></a>
+    <a class="xl" href="https://iherb.co/UEqpSs6m"><span class="xi">🛒</span><span><b>רשימת קניות באייהרב</b><small>מוצרים לעור קורן ולבית נקי.</small></span></a>
+</div></div>
+<script>
+(function(){
+  var lm=document.getElementById('lm');
+  document.querySelectorAll('a[data-buy]').forEach(function(a){ a.target='_blank'; a.rel='noopener'; a.addEventListener('click',function(){ setTimeout(function(){ lm.hidden=false; if(window.gtag) gtag('event','thankyou_list_shown',{page:'sauerkraut'}); },400); }); });
+  lm.addEventListener('click',function(e){ if(e.target===lm||e.target.hasAttribute('data-lmclose')) lm.hidden=true; });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') lm.hidden=true; });
 })();
 </script>
 </body>
