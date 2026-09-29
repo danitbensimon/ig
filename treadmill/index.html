@@ -181,16 +181,23 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
 .qz-next{all:unset; box-sizing:border-box; cursor:pointer; display:block; width:100%; margin-top:12px; text-align:center; background:var(--wine); color:#fff; font-family:'Heebo',sans-serif; font-weight:800; font-size:19px; padding:13px; border-radius:999px}
 .qz-note{text-align:center; font-size:19px; font-weight:600; color:var(--wine); margin:0 0 16px}
 .hero h1{color:var(--wine)}
+
+.prodwrap{position:relative; width:100%; max-width:420px}
+.vibe{position:absolute; top:14px; left:10px; transform:rotate(-8deg); background:linear-gradient(90deg,#F48FB6,#EC5F97,#F7A6C6); color:#fff; font-family:'Heebo',sans-serif; font-weight:900; font-size:22px; padding:10px 18px; border-radius:999px;
+  box-shadow:0 0 0 0 rgba(236,95,151,.6),0 8px 22px rgba(236,95,151,.45); animation:vFloat 3s ease-in-out infinite, vGlow 2s ease-in-out infinite}
+@keyframes vFloat{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-8px)}}
+@keyframes vGlow{0%,100%{box-shadow:0 0 12px 2px rgba(236,95,151,.55),0 8px 22px rgba(236,95,151,.4)}50%{box-shadow:0 0 28px 10px rgba(247,166,198,.9),0 8px 22px rgba(236,95,151,.4)}}
+@media (prefers-reduced-motion:reduce){.vibe{animation:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <section class="hero">
-    <span class="kick">המבוקש חזר למלאי · בהנחה לעוקבות</span>
+    <span class="kick">חזר למלאי · בהנחה לעוקבות</span>
     <h1>אין לך זמן<br>לצאת להליכה?</h1>
     <p class="sub">הליכון מתקפל עם רטט, שנכנס לפינה קטנה בבית ומחכה לך כשיש לך כמה דקות.</p>
-    <img class="prod" src="product.webp" alt="הליכון RUNVO FLEX VIBE">
+    <div class="prodwrap"><img class="prod" src="product.webp" alt="הליכון RUNVO FLEX VIBE"><span class="vibe">〰️ עם רטט!</span></div>
     <div class="cta">
       <a class="buy" href="https://bit.ly/4hrGYiQ" data-buy="hero">להליכון בהנחה לעוקבות</a>
       <p class="fine">RUNVO FLEX VIBE · אחריות היבואן הרשמי</p>
@@ -257,7 +264,7 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
   </section>
 
   <section class="plain" style="text-align:center">
-    <h2>המבוקש חזר למלאי</h2>
+    <h2>חזר למלאי</h2>
     <p>ועכשיו בהנחה לעוקבות</p>
     <div class="cta" style="margin-top:14px"><a class="buy" href="https://bit.ly/4hrGYiQ" data-buy="bottom">להליכון בהנחה לעוקבות</a></div>
   </section>
