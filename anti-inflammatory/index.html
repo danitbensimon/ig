@@ -328,7 +328,7 @@ button.buy:disabled{opacity:.7; cursor:wait}
       <div class="up">
         <h3 class="up-h">אולי תתאהבי גם ב... ❤️👇</h3>
         <a class="xl" href="https://ig.danitbensimon.com/guide.html?utm_source=free_thankyou#price"><span class="xi">📘</span><span><b>המדריך המלא לפריטין</b><small>תפריט שבועי ו-4 בונוסים. 79 ₪ במקום 99, עד 20.10.</small></span></a>
-        <a class="xl" href="https://ig.danitbensimon.com/?utm_source=ai_thankyou"><span class="xi">🩸</span><span><b>שליף הפריטין למתחילות <span class="tag free">חינם</span></b><small>חינם. מה המספר שלך אומר, ואיזו בדיקה לבקש.</small></span></a>
+        <a class="xl" href="https://ig.danitbensimon.com/ferritin-test/?utm_source=ai_thankyou"><span class="xi">🩸</span><span><b>שליף הפריטין למתחילות <span class="tag free">חינם</span></b><small>חינם. מה המספר שלך אומר, ואיזו בדיקה לבקש.</small></span></a>
         <a class="xl" href="https://ig.danitbensimon.com/sauerkraut/?utm_source=free_thankyou"><span class="xi">🫙</span><span><b>פרוביוטיקה בצנצנת</b><small>צנצנת התססה וקורס להכנת כרוב כבוש חי, בהנחה לחגים. מי שרוכשת מקבלת ממני במתנה את המדריך לתזונה אנטי־דלקתית 🎁</small></span></a>
         <a class="xl" href="https://ig.danitbensimon.com/treadmill/"><span class="xi">🚶‍♀️</span><span><b>הליכון רטט מתקפל</b><small>חזר למלאי, ועכשיו בהנחה לעוקבות.</small></span></a>
         <a class="xl" href="https://kglowskin.app/?utm_source=free_thankyou"><span class="xi">✨</span><span><b>שגרת עור קוריאנית לגיל 40+ <span class="tag free">חינם</span></b><small>השגרה הראשונה בחינם למייל, בוקר וערב.</small></span></a>
@@ -399,6 +399,14 @@ button.buy:disabled{opacity:.7; cursor:wait}
   ['name','email','ig'].forEach(function(id){document.getElementById(id).addEventListener('blur',function(){ if(this.value) check(id); })});
   document.getElementById('follows').addEventListener('change',function(){check('follows')});
   var qs=new URLSearchParams(location.search);
+  // Where the lead came from: utm first (kept from her first visit), then in-app browser, then referrer.
+  function leadSrc(){var u=qs.get('utm_source');
+    try{ if(u) localStorage.setItem('lead_src',u); else u=localStorage.getItem('lead_src'); }catch(_){}
+    if(u) return u; var ua=navigator.userAgent, r=document.referrer;
+    if(/Instagram/i.test(ua)) return 'instagram_app'; if(/FBAN|FBAV|FB_IAB/i.test(ua)) return 'facebook_app'; if(/TikTok|musical_ly|Bytedance/i.test(ua)) return 'tiktok_app';
+    if(r){ try{var h=new URL(r); return h.hostname===location.hostname ? 'site'+h.pathname : h.hostname.replace(/^www\./,'');}catch(_){} }
+    return 'direct';}
+  var LEAD_SRC=leadSrc();
   form.addEventListener('submit',async function(e){
     e.preventDefault(); ferr.style.display='none';
     var bad=Object.keys(rules).filter(function(id){return !check(id)});
@@ -411,7 +419,7 @@ button.buy:disabled{opacity:.7; cursor:wait}
       ['instagram_username',form.ig.value.trim().replace(/^@/,'').toLowerCase()],
       ['follows_on_instagram','true'],['free_guide_name','המדריך לתזונה אנטי־דלקתית'],['free_guide_url','https://ig.danitbensimon.com/g/6wyde50x/bonus-anti-inflammatory.pdf'],
       ['gut_quiz_answer',a.fer||''],['ferment_quiz_answer',a.sym||''],
-      ['free_guide_utm_source',qs.get('utm_source')||'']]
+      ['free_guide_utm_source',LEAD_SRC]]
       .filter(function(f){return f[1]!==''}).map(function(f){return {objectTypeId:'0-1',name:f[0],value:f[1]}});
     var payload={fields:fields,context:Object.assign({pageUri:location.href,pageName:document.title},hutk?{hutk:hutk}:{})};
     var ok=false;

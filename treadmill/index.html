@@ -402,6 +402,14 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
   function check(id){var el=document.getElementById(id), ok=rules[id](el.value||''); el.closest('.field').classList.toggle('invalid',!ok); return ok;}
   document.querySelectorAll('a[data-cta]').forEach(function(a){a.addEventListener('click',function(){ if(window.gtag) gtag('event','cta_click',{page:'treadmill',placement:a.dataset.cta}); });});
   var qs=new URLSearchParams(location.search);
+  // Where the lead came from: utm first (kept from her first visit), then in-app browser, then referrer.
+  function leadSrc(){var u=qs.get('utm_source');
+    try{ if(u) localStorage.setItem('lead_src',u); else u=localStorage.getItem('lead_src'); }catch(_){}
+    if(u) return u; var ua=navigator.userAgent, r=document.referrer;
+    if(/Instagram/i.test(ua)) return 'instagram_app'; if(/FBAN|FBAV|FB_IAB/i.test(ua)) return 'facebook_app'; if(/TikTok|musical_ly|Bytedance/i.test(ua)) return 'tiktok_app';
+    if(r){ try{var h=new URL(r); return h.hostname===location.hostname ? 'site'+h.pathname : h.hostname.replace(/^www\./,'');}catch(_){} }
+    return 'direct';}
+  var LEAD_SRC=leadSrc();
   function reveal(){form.hidden=true; document.getElementById('done').hidden=false; document.getElementById('suNote').textContent='הנה הקוד שלך 💌'; }
   form.addEventListener('submit',async function(e){
     e.preventDefault(); ferr.style.display='none';
@@ -410,7 +418,7 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
     btn.disabled=true; btn.textContent='שולחת…';
     var hutk=(document.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)||[])[1];
     var fields=[['firstname',form.name.value.trim()],['email',form.email.value.trim().toLowerCase()],['instagram_username',form.ig.value.trim().replace(/^@/,'').toLowerCase()],
-      ['follows_on_instagram','true'],['treadmill_lead','true'],['lead_channel','treadmill page'],['free_guide_name','קוד הנחה להליכון'],['free_guide_utm_source',qs.get('utm_source')||'']]
+      ['follows_on_instagram','true'],['treadmill_lead','true'],['lead_channel','treadmill page'],['free_guide_name','קוד הנחה להליכון'],['free_guide_utm_source',LEAD_SRC]]
       .filter(function(f){return f[1]!==''}).map(function(f){return {objectTypeId:'0-1',name:f[0],value:f[1]}});
     var ok=false;
     for(var i=0;i<HOSTS.length&&!ok;i++){try{var r=await fetch(HOSTS[i]+'/submissions/v3/integration/submit/'+HS_PORTAL+'/'+HS_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:Object.assign({pageUri:location.href,pageName:document.title},hutk?{hutk:hutk}:{})})}); ok=r.ok;}catch(_){}}
