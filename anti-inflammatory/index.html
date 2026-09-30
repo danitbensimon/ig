@@ -427,7 +427,9 @@ button.buy:disabled{opacity:.7; cursor:wait}
       try{var r=await fetch(HOSTS[i]+'/submissions/v3/integration/submit/'+HS_PORTAL+'/'+HS_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); ok=r.ok;}catch(_){}
     }
     if(!ok){ferr.style.display='block'; btn.disabled=false; btn.textContent='שלחי לי את המדריך'; return;}
-    if(window.gtag) gtag('event','generate_lead',{form:'free_ferritin_guide'});
+    try{ var mb=new URLSearchParams(); [['email',form.email.value.trim().toLowerCase()],['name',form.name.value.trim()],['instagram',form.ig.value.trim().replace(/^@/,'').toLowerCase()],['lead_source',LEAD_SRC],['signup_page','anti_inflammatory']].forEach(function(f){mb.append('fields['+f[0]+']',f[1])}); mb.append('ml-submit','1'); mb.append('anticsrf','true');
+      fetch('https://assets.mailerlite.com/jsonp/2673001/forms/200069796888315374/subscribe',{method:'POST',mode:'no-cors',body:mb}); }catch(_){}
+    if(window.gtag) gtag('event','generate_lead',{form:'free_anti_inflammatory'});
     document.getElementById('sentTo').textContent=email;
     form.hidden=true; document.getElementById('done').hidden=false; document.getElementById('signup').querySelector('h2').textContent='המדריך שלך מוכן 💌'; document.getElementById('signup').scrollIntoView({behavior:'smooth',block:'start'});
   });

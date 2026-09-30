@@ -423,6 +423,8 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
     var ok=false;
     for(var i=0;i<HOSTS.length&&!ok;i++){try{var r=await fetch(HOSTS[i]+'/submissions/v3/integration/submit/'+HS_PORTAL+'/'+HS_FORM,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:fields,context:Object.assign({pageUri:location.href,pageName:document.title},hutk?{hutk:hutk}:{})})}); ok=r.ok;}catch(_){}}
     if(!ok){ferr.style.display='block'; btn.disabled=false; btn.textContent='לקבלת הקוד'; return;}
+    try{ var mb=new URLSearchParams(); [['email',form.email.value.trim().toLowerCase()],['name',form.name.value.trim()],['instagram',form.ig.value.trim().replace(/^@/,'').toLowerCase()],['lead_source',LEAD_SRC],['signup_page','treadmill']].forEach(function(f){mb.append('fields['+f[0]+']',f[1])}); mb.append('ml-submit','1'); mb.append('anticsrf','true');
+      fetch('https://assets.mailerlite.com/jsonp/2673001/forms/200069863295681693/subscribe',{method:'POST',mode:'no-cors',body:mb}); }catch(_){}
     if(window.gtag) gtag('event','generate_lead',{form:'treadmill'});
     reveal(); document.getElementById('signup').scrollIntoView({behavior:'smooth',block:'start'});
   });
