@@ -169,6 +169,11 @@ footer{font-size:16px; line-height:1.6; color:var(--ink-2); text-align:center}
 .qz-again{all:unset; cursor:pointer; display:block; margin:14px auto 0; font-size:18px; font-weight:600; color:var(--wine); text-decoration:underline}
 @media (prefers-reduced-motion:reduce){.qz-q.on{animation:none}.qz-opt{transition:none}}
 .prod{width:100%; max-width:420px; border-radius:18px; background:#fff; box-shadow:var(--shadow)}
+.prodwrap.vid{max-width:320px; margin:0 auto}
+.prodwrap.vid .vibe{top:auto; bottom:16px; left:10px}
+video.prod{display:block; aspect-ratio:9/16; object-fit:cover; background:#000}
+.snd{all:unset; box-sizing:border-box; cursor:pointer; position:absolute; bottom:14px; right:12px; background:rgba(0,0,0,.6); color:#fff; font-family:'Heebo',sans-serif; font-weight:700; font-size:18px; padding:9px 14px; border-radius:999px}
+.snd:focus-visible{outline:3px solid #EC5F97}
 .feat{display:grid; grid-template-columns:1fr 1fr; gap:10px}
 .feat div{background:linear-gradient(140deg,var(--card-a),var(--card-b)); border:1px solid var(--line); border-radius:14px; padding:12px}
 .feat b{display:block; font-family:'Heebo',sans-serif; font-size:19px; color:var(--ink)}
@@ -255,7 +260,7 @@ button.buy:disabled{opacity:.7; cursor:wait}
     <span class="kick">חזר למלאי · בהנחה לעוקבות</span>
     <h1>אין לך זמן<br>לצאת להליכה?</h1>
     <p class="sub">הליכון מתקפל עם רטט, שנכנס לפינה קטנה בבית ומחכה לך כשיש לך כמה דקות.</p>
-    <div class="prodwrap"><img class="prod" src="product.webp" alt="הליכון RUNVO FLEX VIBE"><span class="vibe">〰️ עם רטט!</span></div>
+    <div class="prodwrap vid"><video class="prod" id="reelV" src="reel.mp4" poster="reel-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="דנית הולכת על הליכון RUNVO FLEX VIBE עם רטט"></video><button class="snd" id="sndB" type="button" aria-label="הפעלת סאונד">🔇 להפעיל סאונד</button><span class="vibe">〰️ עם רטט!</span></div>
     <div class="cta">
       <a class="buy" href="#signup" data-cta="hero">לקבלת קוד ההנחה לעוקבות</a>
       <p class="fine">RUNVO FLEX VIBE · אחריות היבואן הרשמי</p>
@@ -428,6 +433,13 @@ document.querySelectorAll('.cp').forEach(function(b){b.addEventListener('click',
     if(window.gtag) gtag('event','generate_lead',{form:'treadmill'});
     reveal(); document.getElementById('signup').scrollIntoView({behavior:'smooth',block:'start'});
   });
+})();
+</script>
+<script>
+(function(){var v=document.getElementById('reelV'),b=document.getElementById('sndB'); if(!v||!b) return;
+  var seen=true; if('IntersectionObserver' in window){new IntersectionObserver(function(e){seen=e[0].isIntersecting; if(seen) v.play().catch(function(){}); else v.pause();},{threshold:0.3}).observe(v);}
+  v.addEventListener('pause',function(){ if(seen&&!document.hidden) setTimeout(function(){ if(seen&&v.paused) v.play().catch(function(){}); },300); });
+  b.addEventListener('click',function(){v.muted=!v.muted; if(!v.muted){v.currentTime=0; v.play();} b.textContent=v.muted?'🔇 להפעיל סאונד':'🔊 להשתיק'; b.setAttribute('aria-label',v.muted?'הפעלת סאונד':'השתקה'); if(!v.muted&&window.gtag) gtag('event','video_unmute',{page:'treadmill'});});
 })();
 </script>
 </body>
