@@ -665,6 +665,7 @@ const HS_HOSTS = ['https://api-eu1.hsforms.com', 'https://api.hsforms.com'];
       }
       if (!ok) throw lastErr;
       if (window.gtag) gtag('event', 'generate_lead', {form: 'magazine_waitlist'});
+      try { fetch('https://www.kglowskin.app/api/guide-lead', {method:'POST', headers:{'Content-Type':'text/plain'}, body: JSON.stringify({email: data.email, firstName: parts[0], guide: 'Glow Factor רשימת המתנה', instagram: data.instagram, page: location.pathname})}); } catch (_) {}
       card.classList.add('sent');
       card.scrollIntoView({behavior:'smooth', block:'center'});
     } catch (err) {

@@ -491,6 +491,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
     if(!ok){ferr.style.display='block'; btn.disabled=false; btn.textContent='שלחי לי את הרשימה'; return;}
     try{ var mb=new URLSearchParams(); [['email',form.email.value.trim().toLowerCase()],['name',form.name.value.trim()],['instagram',form.ig.value.trim().replace(/^@/,'').toLowerCase()],['lead_source',LEAD_SRC],['signup_page','sweets']].forEach(function(f){mb.append('fields['+f[0]+']',f[1])}); mb.append('ml-submit','1'); mb.append('anticsrf','true');
       fetch('https://assets.mailerlite.com/jsonp/2673001/forms/200069556827326165/subscribe',{method:'POST',mode:'no-cors',body:mb}); }catch(_){}
+    /* Enter the Glow Lab email program right away. */ try{var gl={};fields.forEach(function(f){gl[f[0]]=f[1];});fetch('https://www.kglowskin.app/api/guide-lead',{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({email:gl.email,firstName:gl.firstname,guide:gl.free_guide_name,instagram:gl.instagram_username,page:location.pathname})});}catch(_){}
     if(window.gtag) gtag('event','generate_lead',{form:'free_sweets_list'});
     reveal();
   });
