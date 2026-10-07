@@ -61,7 +61,16 @@ footer{text-align:center;font-size:17px;line-height:1.6;color:var(--ink-2)}
 footer a{color:var(--wine);font-weight:600}
 @media(max-width:360px){.opts{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
-</style></head><body>
+</style><!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','515509045659595');fbq('track','PageView');
+/* Every GA event the page already sends also reaches Meta, so Meta Ads can optimize for leads and checkouts. */
+(function(){var MAP={generate_lead:'Lead',begin_checkout:'InitiateCheckout'};var CUSTOM={affiliate_click:'AffiliateClick',coupon_copy:'CouponCopy',quiz_complete:'QuizComplete'};
+function wrap(){var g=window.gtag;if(typeof g!=='function'||g.__meta)return;var w=function(){try{if(arguments[0]==='event'){var n=arguments[1],p=arguments[2]||{};var params={content_name:p.free_guide_name||p.label||p.item||location.pathname};if(p.value){params.value=p.value;params.currency=p.currency||'ILS';}if(MAP[n])fbq('track',MAP[n],params);else if(CUSTOM[n])fbq('trackCustom',CUSTOM[n],params);}}catch(e){}return g.apply(this,arguments);};w.__meta=1;window.gtag=w;}
+wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=515509045659595&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+</head><body>
 <div class="wrap">
 
 <header class="head">
