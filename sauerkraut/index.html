@@ -232,6 +232,8 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
 .qz-tip p{font-size:19px}
 .qz-next{all:unset; cursor:pointer; display:block; margin:12px auto 0; background:var(--wine); color:#fff; font-family:'Heebo',sans-serif; font-weight:700; font-size:19px; padding:12px 30px; border-radius:999px}
 .qz-num{font-size:44px}
+.qz-res .qz-jar{margin:0 0 20px; padding-top:16px; border-top:1px solid var(--line)}
+.qz-res #qzList li{font-size:18px; color:var(--ink-2)}
 .hero p.sub.pre{font-weight:800; color:var(--wine); margin-bottom:-8px}
 .cmp td:last-child{color:var(--ink)}</style>
 <body>
@@ -337,9 +339,16 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
       <button class="qz-next" id="qzNext">להמשיך</button>
     </div>
     <div class="qz-q qz-res" data-q="res">
-      <h3>ככה מכינים אותו בבית</h3>
-      <p class="qz-sub">בפרק 3 אני מראה את כל ההכנה: איך חותכים, כמה מלח, ואיך הכרוב נשאר מתחת לנוזל בלי עובש.</p>
-      <div class="cta"><a class="buy" href="#reels" id="qzReel">לצפות בפרק 3</a></div>
+      <h3 id="qzRecT">ההמלצה שלי: כרוב מותסס ביתי, בכלי התססה</h3>
+      <ul id="qzList"></ul>
+      <ul class="qz-jar">
+        <li class="tick"><b>בלי עובש:</b> שסתום שמוציא את הגז ולא מכניס אוויר, וטבעת סיליקון שאוטמת.</li>
+        <li class="tick"><b>הכרוב נשאר מתחת לנוזל:</b> מתקן דחיסה מנירוסטה במקום משקולות שלא עובדות.</li>
+        <li class="tick"><b>רואים מה קורה בפנים:</b> הכלי שקוף, ומזהים בעיה לפני שהיא מתרחשת.</li>
+        <li class="tick"><b>קורס של האקדמיה למזונות מותססים,</b> שם למדתי את כל השיטה.</li>
+      </ul>
+      <div class="cta"><a class="buy" href="https://fermentationacademy.co.il/vegetable-fermentation-bundle/?from=site&amp;ref=11" data-buy="quiz">לרכישת הצנצנת והקורס</a></div>
+      <div class="gift">🎁 <b>מתנה ממני:</b> מי שרוכשת מקבלת את המדריך לתזונה אנטי־דלקתית.</div>
       <button class="qz-again" id="qzAgain">לענות שוב</button>
     </div>
   </section>
@@ -414,7 +423,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
                none:'בכרוב מותסס ביתי יש פי 1000 יותר חיידקים מאשר בתוסף פרוביוטיקה, וכל מה שצריך זה כרוב ומלח.'}};
   function show(k){cur=k; tip.hidden=true; steps.forEach(function(s){s.classList.toggle('on',s.dataset.q===k)});
     var n=order.indexOf(k);
-    document.getElementById('qzCount').textContent=k==='res'?'עכשיו לפרק 3':'שאלה '+(n+1)+' מתוך 3';
+    document.getElementById('qzCount').textContent=k==='res'?'ההמלצה שלך':'שאלה '+(n+1)+' מתוך 3';
     document.getElementById('qzBar').style.width=(k==='res'?100:(n+1)*25)+'%';}
   show('when');
   qz.addEventListener('click',function(e){var o=e.target.closest('.qz-opt'); if(!o) return;
@@ -424,10 +433,9 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
   });
   document.getElementById('qzNext').addEventListener('click',function(){
     var n=order.indexOf(cur);
-    if(n<order.length-1) show(order[n+1]); else { show('res'); if(window.gtag) gtag('event','quiz_complete',{quiz:'bloating'}); }
+    if(n<order.length-1) show(order[n+1]); else { document.getElementById('qzRecT').textContent=a.src==='jar'?'ההמלצה שלי: להחליף את הצנצנת הרגילה בכלי התססה':'ההמלצה שלי: כרוב מותסס ביתי, בכלי התססה'; document.getElementById('qzList').innerHTML=order.map(function(k){return '<li>'+T[k][a[k]]+'</li>'}).join(''); show('res'); if(window.gtag) gtag('event','quiz_complete',{quiz:'bloating'}); }
     qz.scrollIntoView({behavior:'smooth',block:'start'});
   });
-  document.getElementById('qzReel').addEventListener('click',function(e){e.preventDefault(); var r=document.querySelector('.reel[data-id="Dd0fjwPNK2r"]'); if(r) r.click();});
   document.getElementById('qzAgain').addEventListener('click',function(){a={}; qz.querySelectorAll('.pick').forEach(function(b){b.classList.remove('pick')}); show('when');});
 })();
 </script>
