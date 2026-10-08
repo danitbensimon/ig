@@ -316,8 +316,9 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
     <div class="qz-bar"><i id="qzBar"></i></div>
     <div class="qz-q on" data-q="when">
       <h3>מתי הבטן שלך הכי נפוחה?</h3>
-      <div class="qz-grid g3">
+      <div class="qz-grid">
         <button class="qz-opt" data-v="meal"><span class="qz-num">🍽️</span><b>אחרי ארוחות</b></button>
+        <button class="qz-opt" data-v="big"><span class="qz-num">🍝</span><b>אחרי ארוחות גדולות</b></button>
         <button class="qz-opt" data-v="day"><span class="qz-num">☀️</span><b>רוב היום</b></button>
         <button class="qz-opt" data-v="abx"><span class="qz-num">💊</span><b>מאז אנטיביוטיקה</b></button>
       </div>
@@ -410,6 +411,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
   var tip=document.getElementById('qzTip'), tipT=document.getElementById('qzTipT');
   var T={when:{meal:'החיידקים הטובים בכרוב מותסס עוזרים לפרק את המזון. זה מה שמקל על נפיחות אחרי ארוחות.',
                day:'החיידקים הטובים מייצרים חומצות שמונעות מחיידקים מזיקים להתרבות. ככה המיקרוביום חוזר לאיזון.',
+               big:'בארוחה גדולה יש לבטן יותר מזון לפרק. החיידקים הטובים בכרוב מותסס עוזרים לפירוק יעיל של המזון, וזה מה שמקל על הנפיחות.',
                abx:'אנטיביוטיקה הורגת גם את החיידקים הטובים. אצלי הנפיחות והכאבים לא נעלמו יחד עם ההליקובקטר.'},
           hp:{now:'הטיפול הוא 3 סוגי אנטיביוטיקה במשך 14 יום, ומומלץ להתייעץ עם הרופא. כרוב מותסס יוצר תנאים שלא נוחים להליקובקטר ומפחית את הדלקתיות בקיבה.',
               past:'אחרי הטיפול המעי צריך חיידקים טובים חזרה. כרוב מותסס הוא הדבר היחיד שעזר לבטן שלי אחרי ההליקובקטר.',
