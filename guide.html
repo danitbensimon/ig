@@ -188,7 +188,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
       <div class="qz-grid">
         <button class="qz-opt" data-v="tired"><img src="quiz/q1-tired.webp" alt="" loading="lazy"><b>עייפות מהבוקר</b></button>
         <button class="qz-opt" data-v="hair"><img src="quiz/q1-hair.webp" alt="" loading="lazy"><b>נשירת שיער</b></button>
-        <button class="qz-opt" data-v="legs"><img src="quiz/q1-legs.webp" alt="" loading="lazy"><b>רגליים שלא נרגעות בלילה</b></button>
+        <button class="qz-opt" data-v="legs"><img src="quiz/q1-legs.webp" alt="" loading="lazy"><b>עקצוצים ברגליים בלילה</b></button>
         <button class="qz-opt" data-v="focus"><img src="quiz/q1-focus.webp" alt="" loading="lazy"><b>קשה לי להתרכז</b></button>
       </div>
     </div>
@@ -332,9 +332,6 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
     <button class="xpop-x" type="button" aria-label="סגירה" data-close>×</button>
     <p class="xpop-kick">לא בטוחה לגבי המדריך?</p>
     <h2 id="xpop-t">אולי תתאהבי באלו ❤️👇</h2>
-    <a class="xpop-item" href="https://ig.danitbensimon.com/glow-factor/?utm_source=guide_exit">
-      <span class="xi">📖</span><span><b>Glow Factor, המגזין המודפס</b><small>חינם לעוקבות, עם דוגמיות מתנה. משלמת על המשלוח בלבד.</small></span>
-    </a>
     <a class="xpop-item" href="https://kglowskin.app/?utm_source=guide_exit">
       <span class="xi">✨</span><span><b>שגרת עור קוריאנית לגיל 40+</b><small>השגרה הראשונה בחינם למייל, בוקר וערב.</small></span>
     </a>
@@ -424,7 +421,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
   var T={
     sym:{tired:'<b>עייפות מהבוקר:</b> פרק 2 מסביר מה קורה לגוף כשהפריטין נמוך שנים.',
          hair:'<b>נשירת שיער:</b> כשהשיער נושר, מכוונים לרוב לפריטין גבוה יותר. פרק 5 מראה לאיזה מספר לכוון.',
-         legs:'<b>רגליים שלא נרגעות בלילה:</b> זו תסמונת הרגליים חסרות המנוחה. פרק 2 מסביר את הקשר לפריטין, ופרק 5 מראה לאיזה מספר לכוון.',
+         legs:'<b>עקצוצים ברגליים בלילה:</b> לזה קוראים תסמונת הרגליים חסרות המנוחה. פרק 2 מסביר את הקשר לפריטין, ופרק 5 מראה לאיזה מספר לכוון.',
          focus:'<b>קושי להתרכז:</b> פרק 2 מסביר מה קורה לגוף כשהפריטין נמוך שנים.'},
     fer:{low:'<b>פריטין מתחת ל-30:</b> לפי ההנחיות החדשות של איגוד ההמטולוגיה האמריקאי (ספטמבר 2026), זה חוסר ברזל, גם בלי אנמיה.',
          mid:'<b>פריטין 30 עד 50:</b> הבדיקה אומרת שזה תקין. בווסת כבדה, ההנחיות החדשות מגדירות חוסר ברזל עד 50, ורוב הנשים מרגישות הבדל באנרגיה רק סביב 50 עד 70.',
@@ -449,7 +446,7 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
     a[key]=o.dataset.v;
     if(window.gtag) gtag('event','quiz_answer',{question:key, answer:a[key]});
     setTimeout(function(){
-      i++;
+      i=next(i+1);
       if(i===n){
         document.getElementById('qzList').innerHTML=['sym','fer','sup','gut'].map(function(k){return '<li class="tick">'+T[k][a[k]]+'</li>'}).join('');
         if(window.gtag) gtag('event','quiz_complete',a);
@@ -458,6 +455,18 @@ wrap();document.addEventListener('DOMContentLoaded',wrap);})();</script>
       qz.scrollIntoView({behavior:'smooth',block:'start'});
     },260);
   });
+  // Answers picked in an email arrive as ?sym=tired or ?fer=low; mark them and open the first unanswered question.
+  function next(k){ while(k<n && a[steps[k].dataset.q]) k++; return k; }
+  try{
+    var P=new URLSearchParams(location.search), got=0;
+    ['sym','fer','sup','gut'].forEach(function(k){
+      var v=P.get(k); if(!v||!T[k][v]) return;
+      var b=qz.querySelector('.qz-q[data-q="'+k+'"] .qz-opt[data-v="'+v+'"]'); if(!b) return;
+      b.classList.add('pick'); a[k]=v; got++;
+      if(window.gtag) gtag('event','quiz_answer',{question:k, answer:v, source:'email'});
+    });
+    if(got){ i=next(0); show(i); setTimeout(function(){qz.scrollIntoView({block:'start'})},150); }
+  }catch(e){}
   document.getElementById('qzAgain').addEventListener('click',function(){
     a={}; i=0; qz.querySelectorAll('.pick').forEach(function(b){b.classList.remove('pick')}); show(0);
   });
