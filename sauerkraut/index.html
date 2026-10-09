@@ -460,7 +460,7 @@ table.cmp{width:100%; border-collapse:collapse; font-size:17px}
       <p class="fine igonly"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="iggF" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#iggF)"/><rect x="6" y="6" width="12" height="12" rx="3.8" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="2.9" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>לעוקבות בלבד</span></p>
       <div class="cd fcd" data-fcd>
         <p class="cd-t">המדריך חינם בשבילך רק עוד</p>
-        <div class="cd-row"><span><b data-m>39</b>דקות</span><span><b data-s>00</b>שניות</span></div>
+        <div class="cd-row"><span><b data-h>48</b>שעות</span><span><b data-m>00</b>דקות</span><span><b data-s>00</b>שניות</span></div>
       </div>
     </div>
   </section>
@@ -627,7 +627,7 @@ table.cmp{width:100%; border-collapse:collapse; font-size:17px}
   <section>
     <h2>❓ שאלות שחוזרות</h2>
     <details><summary>למה כפיפות בטן לא מורידות נפיחות?</summary><p>כפיפות בטן עובדות על השריר. הנפיחות נמצאת בתוך המעי, ומגיעה מהעיכול ומהמיקרוביום.</p></details>
-    <details><summary>המדריך באמת בחינם?</summary><p>כן, לעוקבות ולזמן מוגבל. אחרי שהזמן נגמר הוא עולה 59 ₪.</p></details>
+    <details><summary>המדריך באמת בחינם?</summary><p>כן, לעוקבות, ל-48 שעות מהרגע שנכנסת לעמוד. אחרי שהזמן נגמר הוא עולה 59 ₪.</p></details>
     <details><summary>כמה לאכול?</summary><p>מותסס אחד ביום. זה ההרגל שעשה אצלי את ההבדל.</p></details>
     <details><summary>למה לא לקנות כרוב כבוש בסופר?</summary><p>קשה מאוד למצוא בחנויות כרוב מותסס איכותי. כרוב מהמדף מפוסטר, וכרוב מהמקרר כולל לרוב חומץ וחומרי שימור במקום תסיסה טבעית.</p></details>
     <details><summary>נפיחות שחוזרת כל הזמן, מה עושים?</summary><p>נפיחות או כאבי בטן שחוזרים מחייבים בירור עם רופא.</p></details>
@@ -742,16 +742,16 @@ table.cmp{width:100%; border-collapse:collapse; font-size:17px}
   });
 
   // free guide deadline (real date, same for every visitor)
-  // 39 minutes from each visitor's first visit. The window is kept, never restarted,
+  // 48 hours from each visitor's first visit. The window is kept, never restarted,
   // and when it runs out the free offer really closes for that visitor.
-  var WINDOW=39*60*1000, KEY='ai_free_start39', start=Date.now();
+  var WINDOW=48*60*60*1000, KEY='ai_free_start48', start=Date.now();
   try{ var saved=parseInt(localStorage.getItem(KEY),10); if(saved>0 && saved<=Date.now()) start=saved; else localStorage.setItem(KEY,String(start)); }catch(_){}
-  var m=document.cookie.match(/(?:^|; )ffa39=(\d+)/); if(m && +m[1]<start) start=+m[1];
-  try{ document.cookie='ffa39='+start+'; max-age=31536000; path=/; SameSite=Lax'; }catch(_){}
+  var m=document.cookie.match(/(?:^|; )ffa48=(\d+)/); if(m && +m[1]<start) start=+m[1];
+  try{ document.cookie='ffa48='+start+'; max-age=31536000; path=/; SameSite=Lax'; }catch(_){}
   var FREE_END=start+WINDOW;
   function ftick(){var ms=FREE_END-Date.now(); if(ms<=0){document.documentElement.classList.add('free-ended');return false}
     var s=Math.floor(ms/1000); var c=document.querySelector('[data-fcd]');
-    c.querySelector('[data-m]').textContent=pad(Math.floor(s/60));c.querySelector('[data-s]').textContent=pad(s%60);return true;}
+    c.querySelector('[data-h]').textContent=pad(Math.floor(s/3600));c.querySelector('[data-m]').textContent=pad(Math.floor(s%3600/60));c.querySelector('[data-s]').textContent=pad(s%60);return true;}
   var END=new Date('2026-10-20T23:59:59+03:00').getTime();
   function pad(n){return n<10?'0'+n:''+n}
   function tick(){var ms=END-Date.now(); if(ms<=0){document.documentElement.classList.add('ended');return false}
